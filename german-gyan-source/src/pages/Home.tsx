@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -6,8 +7,24 @@ import { CheckCircle2, Users, BookOpen, Award, Star, ChevronRight, Phone } from 
 import PageMeta from "@/components/PageMeta";
 import FAQSection from "@/components/FAQSection";
 
+// Import Hero Photo
+import erPhoto from "@assets/er.jpg";
+
 const fadeUp = { hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } };
 const stagger = { hidden: {}, visible: { transition: { staggerChildren: 0.1 } } };
+
+const carouselImages = [
+  {
+    url: erPhoto,
+    title: "Expert German Training",
+    desc: "Join our comprehensive online and offline courses designed to help you speak German fluently."
+  },
+  {
+    url: erPhoto,
+    title: "Goethe Exam Preparation",
+    desc: "Achieve high scores with our targeted coaching, mock tests, and personalized feedback."
+  }
+];
 
 const courses = [
   { level: "A1", title: "Beginner German", price: "₹17,000", href: "/courses/a1-level-german-course", desc: "Start from zero. Learn the alphabet, basic phrases, and foundational grammar." },
@@ -41,6 +58,16 @@ const testimonials = [
 ];
 
 export default function Home() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  // Auto-play carousel every 4 seconds
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % carouselImages.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <div className="min-h-screen bg-background font-sans">
       <PageMeta
@@ -51,37 +78,146 @@ export default function Home() {
       {/* Hero */}
       <section className="pt-28 pb-20 px-4 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 -z-10" />
-        <div className="container mx-auto max-w-6xl">
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={stagger}
-            className="text-center max-w-4xl mx-auto"
-          >
-            <motion.div variants={fadeUp}>
-              <span
-                className="inline-block mb-6 px-5 py-2 rounded-full text-sm font-semibold text-white tracking-wide"
-                style={{ backgroundColor: "#102c3d" }}
+        <div className="w-full mx-auto max-w-[1440px] px-6 md:px-12">
+          <div className="grid md:grid-cols-12 gap-12 items-center">
+            {/* Left Column - Text and Actions */}
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={stagger}
+              className="md:col-span-4 text-left space-y-8"
+            >
+              <motion.div variants={fadeUp}>
+                <span
+                  className="inline-block px-5 py-2 rounded-full text-xs font-bold text-white uppercase tracking-wider"
+                  style={{ backgroundColor: "#102c3d", border: "1px solid rgba(255,255,255,0.1)" }}
+                >
+                  Goethe Exam Preparation | German Gyan
+                </span>
+              </motion.div>
+
+              <motion.h1 
+                variants={fadeUp} 
+                className="text-5xl md:text-[5rem] font-bold tracking-tight text-foreground leading-[1.1]"
               >
-                India's Premier German Academy
-              </span>
+                Learn<br />
+                <span className="block my-2 font-black">
+                  G<span className="text-[#E30613]">e</span><span className="text-[#FFED00]">r</span>man
+                </span>
+                <span className="font-serif italic font-normal text-muted-foreground text-4xl md:text-5xl block mt-4">
+                  Online & Offline
+                </span>
+              </motion.h1>
+
+              <motion.p 
+                variants={fadeUp} 
+                className="text-lg text-muted-foreground leading-relaxed max-w-xl"
+              >
+                From absolute beginner to advanced — personalised German classes online all over the world and offline classes in New Delhi. New batches start every week. Free demo available.
+              </motion.p>
+
+              <motion.div variants={fadeUp} className="flex flex-wrap gap-4">
+                <Button 
+                  size="lg" 
+                  className="rounded-full px-8 text-md font-bold h-14 bg-[#FFC700] hover:bg-[#E6B200] text-black transition-colors border-none"
+                  asChild
+                >
+                  <Link href="/contact">Book Free Demo</Link>
+                </Button>
+                <Button 
+                  size="lg" 
+                  variant="outline" 
+                  className="rounded-full px-8 text-md font-bold h-14 border-border hover:bg-muted transition-colors"
+                  asChild
+                >
+                  <Link href="/courses">View Courses →</Link>
+                </Button>
+              </motion.div>
+
+              {/* Hero Stats */}
+              <motion.div 
+                variants={fadeUp}
+                className="pt-8 border-t border-border/40 grid grid-cols-3 gap-6 max-w-md"
+              >
+                <div>
+                  <div className="text-3xl font-bold text-primary">A1–C1</div>
+                  <div className="text-[10px] uppercase tracking-wider text-muted-foreground font-bold mt-1">All Levels</div>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold text-primary">1000+</div>
+                  <div className="text-[10px] uppercase tracking-wider text-muted-foreground font-bold mt-1">Students</div>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold text-primary">100%</div>
+                  <div className="text-[10px] uppercase tracking-wider text-muted-foreground font-bold mt-1">Dedicated</div>
+                </div>
+              </motion.div>
             </motion.div>
-            <motion.h1 variants={fadeUp} className="text-5xl md:text-7xl font-serif font-bold text-foreground mb-6 leading-tight">
-              Master German,<br />
-              <span className="text-primary">Unlock the World</span>
-            </motion.h1>
-            <motion.p variants={fadeUp} className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
-              From absolute beginner to C2 mastery — expert-led German courses designed specifically for Indian learners. Online & offline.
-            </motion.p>
-            <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="rounded-full px-10 text-lg h-14" asChild>
-                <Link href="/courses">Explore Courses</Link>
-              </Button>
-              <Button size="lg" variant="outline" className="rounded-full px-10 text-lg h-14" asChild>
-                <Link href="/contact">Book Free Demo</Link>
-              </Button>
+
+            {/* Right Column - Large Auto-playing Photo Carousel */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="md:col-span-8 flex justify-center items-center w-full"
+            >
+              <div className="relative w-full aspect-[3/2] max-w-full rounded-3xl overflow-hidden shadow-2xl border border-border/45 bg-muted/20 flex flex-col justify-end group">
+                {/* Carousel Slides */}
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={currentSlide}
+                    initial={{ opacity: 0, scale: 1.02 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.8 }}
+                    className="absolute inset-0 z-0"
+                  >
+                    <img
+                      src={carouselImages[currentSlide].url}
+                      alt={carouselImages[currentSlide].title}
+                      className="w-full h-full object-contain bg-black/40"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                  </motion.div>
+                </AnimatePresence>
+
+                {/* Caption Overlay */}
+                <div className="relative z-10 p-8 text-white text-left space-y-2 pointer-events-none">
+                  <motion.h3 
+                    key={`title-${currentSlide}`}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="text-xl md:text-2xl font-bold text-[#FFC700]"
+                  >
+                    {carouselImages[currentSlide].title}
+                  </motion.h3>
+                  <motion.p 
+                    key={`desc-${currentSlide}`}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.1 }}
+                    className="text-sm text-white/80 leading-relaxed"
+                  >
+                    {carouselImages[currentSlide].desc}
+                  </motion.p>
+                </div>
+
+                {/* Dot Indicators */}
+                <div className="absolute top-6 right-6 z-10 flex gap-2">
+                  {carouselImages.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentSlide(index)}
+                      className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                        currentSlide === index ? "bg-[#FFC700] scale-125" : "bg-white/55 hover:bg-white"
+                      }`}
+                      aria-label={`Go to slide ${index + 1}`}
+                    />
+                  ))}
+                </div>
+              </div>
             </motion.div>
-          </motion.div>
+          </div>
         </div>
       </section>
 

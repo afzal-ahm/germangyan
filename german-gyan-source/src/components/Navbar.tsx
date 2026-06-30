@@ -24,7 +24,14 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-border">
+    <div className="fixed top-0 w-full z-50 flex flex-col">
+      {/* German Flag Top Strip */}
+      <div className="w-full h-[5px] flex">
+        <div className="flex-1 bg-black" />
+        <div className="flex-1 bg-[#E30613]" />
+        <div className="flex-1 bg-[#FFED00]" />
+      </div>
+      <nav className="w-full bg-background/80 backdrop-blur-md border-b border-border">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <Link href="/" className="flex items-center">
           <img src={logo} alt="German Gyan" className="h-10 w-auto object-contain" />
@@ -129,5 +136,6 @@ export default function Navbar() {
         </div>
       )}
     </nav>
+    </div>
   );
 }

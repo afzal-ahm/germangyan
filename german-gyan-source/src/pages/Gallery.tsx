@@ -54,6 +54,7 @@ import office15 from "@assets/office-15.jpeg";
 import speaking1 from "@assets/speaking-1.jpeg";
 import speaking2 from "@assets/speaking-2.jpeg";
 import speaking3 from "@assets/speaking-3.jpeg";
+import erPhoto from "@assets/er.jpg";
 
 // Import Local Videos
 import studentVideo from "@assets/student.mp4";
@@ -83,6 +84,14 @@ interface VideoItem {
 // Master Photos List
 const masterPhotos: PhotoItem[] = [
   // --- PRIORITY GROUP (Achievements, Awards, Events) ---
+  {
+    id: 99,
+    url: erPhoto,
+    thumbnail: erPhoto,
+    title: "German Gyan Sessions",
+    description: "Expert foreign language coaching and Goethe exam preparation with Nidhi Jain.",
+    category: "Events"
+  },
   {
     id: 1,
     url: studentCert1,
