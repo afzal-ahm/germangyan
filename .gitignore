@@ -1,0 +1,19 @@
+# Dependency directories
+node_modules/
+german-gyan-source/node_modules/
+
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# Local env files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Vite / build cache
+.vite/
+german-gyan-source/dist/
+german-gyan-source/.vite/
