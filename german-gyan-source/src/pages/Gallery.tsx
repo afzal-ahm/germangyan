@@ -4,16 +4,38 @@ import { X, ChevronLeft, ChevronRight, Play, Maximize2 } from "lucide-react";
 import PageMeta from "@/components/PageMeta";
 import galleryHero from "@assets/gallery-hero.png";
 
-// Import real photos
+// Import Priority Group (Achievements, Awards, Events)
 import certificate1 from "@assets/certificate-1.jpeg";
-import germanGyan2 from "@assets/german-gyan-2.jpeg";
+import studentCert1 from "@assets/student certificate distribution - 1.jpeg";
+import studentCert2 from "@assets/student certificate distribution - 2.jpeg";
+import studentCert3 from "@assets/student certificate distribution - 3.jpeg";
+import studentCert4 from "@assets/student certificate distribution - 4.jpeg";
+import studentCert5 from "@assets/student certificate distribution - 5.jpeg";
+import studentCert7 from "@assets/student certificate distribution - 7.jpeg";
+import studentCert8 from "@assets/student certificate distribution - 8.jpeg";
+import studentCert9 from "@assets/student certificate distribution - 9.jpeg";
+import studentCert10 from "@assets/student certificate distribution - 10.jpeg";
+import speakerAward from "@assets/Speaker Appreciation Award.jpeg";
+import digitalAward from "@assets/digital women award.jpeg";
+import aaftEvent from "@assets/at AAFT event.jpeg";
+import aaftInterview from "@assets/giving interview at AAFT.jpeg";
+import kirtiKulhar from "@assets/with actress Kirti Kulhar.jpeg";
 import germanGyan from "@assets/german-gyan.jpeg";
+import germanGyan2 from "@assets/german-gyan-2.jpeg";
+
+// Import Regular Group (Centres, Classes, Speaking)
+import nidhi from "@assets/nidhi.jpeg";
 import nidhi1 from "@assets/nidhi-1.jpeg";
+import nidhi1Copy from "@assets/nidhi-1 copy.jpeg";
 import nidhi2 from "@assets/nidhi-2.jpeg";
 import nidhi3 from "@assets/nidhi-3.jpeg";
+import nidhi3Copy from "@assets/nidhi-3 copy.jpeg";
 import nidhi4 from "@assets/nidhi-4.jpeg";
+import nidhi4Copy from "@assets/nidhi-4 copy.jpeg";
 import nidhi5 from "@assets/nidhi-5.jpeg";
-import nidhi from "@assets/nidhi.jpeg";
+import nidhi5Copy from "@assets/nidhi-5 copy.jpeg";
+import nidhi6 from "@assets/nidhi-6.jpeg";
+import nidhi7 from "@assets/nidhi-7.jpeg";
 import office1 from "@assets/office-1.jpeg";
 import office2 from "@assets/office-2.jpeg";
 import office3 from "@assets/office-3.jpeg";
@@ -33,106 +55,290 @@ import speaking1 from "@assets/speaking-1.jpeg";
 import speaking2 from "@assets/speaking-2.jpeg";
 import speaking3 from "@assets/speaking-3.jpeg";
 
-// Photos Data
-const photos = [
+// Import Local Videos
+import studentVideo from "@assets/student.mp4";
+import teachingVideo from "@assets/teaching-german-to-student.mp4";
+
+interface PhotoItem {
+  id: number;
+  url: string;
+  thumbnail: string;
+  title: string;
+  description: string;
+  category: "Achievements" | "Awards" | "Events" | "Centres" | "Classes";
+}
+
+// Master Photos List
+const masterPhotos: PhotoItem[] = [
+  // --- PRIORITY GROUP (Achievements, Awards, Events) ---
   {
     id: 1,
-    url: office1,
-    thumbnail: office1,
-    title: "German Gyan Delhi Centre",
-    description: "A look inside our main classroom and learning area.",
-    category: "Centres"
+    url: studentCert1,
+    thumbnail: studentCert1,
+    title: "Certificate Distribution",
+    description: "Nidhi Jain presenting course completion certificate to a successful student.",
+    category: "Achievements"
   },
   {
     id: 2,
-    url: nidhi1,
-    thumbnail: nidhi1,
-    title: "Live Classroom Lecture",
-    description: "Nidhi Jain conducting an interactive session with students.",
-    category: "Classes"
+    url: studentCert2,
+    thumbnail: studentCert2,
+    title: "Goethe Exam Achiever",
+    description: "Celebrating excellent results and certificate distribution.",
+    category: "Achievements"
   },
   {
     id: 3,
-    url: certificate1,
-    thumbnail: certificate1,
-    title: "Goethe Zertifikat Success",
-    description: "Celebrating our students passing their Goethe certification exams.",
+    url: studentCert3,
+    thumbnail: studentCert3,
+    title: "Batch Graduation",
+    description: "Proud student receiving their German language proficiency certificate.",
     category: "Achievements"
   },
   {
     id: 4,
-    url: speaking1,
-    thumbnail: speaking1,
-    title: "Speaking Practice",
-    description: "Active German conversation drills and pronunciation training.",
-    category: "Classes"
+    url: studentCert4,
+    thumbnail: studentCert4,
+    title: "A2 Level Graduate",
+    description: "Student celebrating their language learning milestone.",
+    category: "Achievements"
   },
   {
     id: 5,
-    url: office2,
-    thumbnail: office2,
-    title: "Delhi Centre Classroom",
-    description: "Spacious classrooms designed for focused language learning.",
-    category: "Centres"
+    url: studentCert5,
+    thumbnail: studentCert5,
+    title: "Fluency Certified",
+    description: "Honoring dedication and hard work in mastering German.",
+    category: "Achievements"
   },
   {
     id: 6,
-    url: nidhi2,
-    thumbnail: nidhi2,
-    title: "Grammar & Concept Session",
-    description: "Breaking down complex German sentence structures.",
-    category: "Classes"
+    url: studentCert7,
+    thumbnail: studentCert7,
+    title: "Certificate Ceremony",
+    description: "Students successfully graduating to higher CEFR levels.",
+    category: "Achievements"
   },
   {
     id: 7,
-    url: speaking2,
-    thumbnail: speaking2,
-    title: "Interactive Speaking",
-    description: "Students collaborating on conversational German exercises.",
-    category: "Classes"
+    url: studentCert8,
+    thumbnail: studentCert8,
+    title: "Goethe Zertifikat Success",
+    description: "Another student clears their official certification with flying colors.",
+    category: "Achievements"
   },
   {
     id: 8,
-    url: office3,
-    thumbnail: office3,
-    title: "Delhi Classroom Setup",
-    description: "Our comfortable student seating and multimedia board setup.",
-    category: "Centres"
+    url: studentCert9,
+    thumbnail: studentCert9,
+    title: "Successful Learner",
+    description: "German Gyan student holding their official level certificate.",
+    category: "Achievements"
   },
   {
     id: 9,
-    url: germanGyan,
-    thumbnail: germanGyan,
-    title: "German Gyan Batch Celebration",
-    description: "Celebrating batch completion and successful learning milestones.",
-    category: "Events"
+    url: studentCert10,
+    thumbnail: studentCert10,
+    title: "Language Proficiency Award",
+    description: "A proud moment celebrating language learning success.",
+    category: "Achievements"
   },
   {
     id: 10,
-    url: nidhi3,
-    thumbnail: nidhi3,
-    title: "Personalized Guidance",
-    description: "One-on-one student counseling for higher education in Germany.",
-    category: "Classes"
+    url: certificate1,
+    thumbnail: certificate1,
+    title: "Goethe Zertifikat B1",
+    description: "Official German language certificate achieved by our student.",
+    category: "Achievements"
   },
   {
     id: 11,
-    url: office4,
-    thumbnail: office4,
-    title: "Classroom Learning Space",
-    description: "Well-equipped classrooms providing a great study atmosphere.",
-    category: "Centres"
+    url: speakerAward,
+    thumbnail: speakerAward,
+    title: "Speaker Appreciation Award",
+    description: "Nidhi Jain receiving the Speaker Appreciation Award for her educational contributions.",
+    category: "Awards"
   },
   {
     id: 12,
-    url: speaking3,
-    thumbnail: speaking3,
-    title: "Pronunciation Practice",
-    description: "Dedicated drills to master German phonetics and accent.",
-    category: "Classes"
+    url: digitalAward,
+    thumbnail: digitalAward,
+    title: "Digital Women Award",
+    description: "Nidhi Jain honored at the Digital Women Awards for leadership in education.",
+    category: "Awards"
   },
   {
     id: 13,
+    url: aaftEvent,
+    thumbnail: aaftEvent,
+    title: "AAFT University Event",
+    description: "Nidhi Jain invited as a guest speaker at the prestigious AAFT event.",
+    category: "Events"
+  },
+  {
+    id: 14,
+    url: aaftInterview,
+    thumbnail: aaftInterview,
+    title: "Media Interview at AAFT",
+    description: "Nidhi Jain giving an interview sharing insights on foreign language education.",
+    category: "Events"
+  },
+  {
+    id: 15,
+    url: kirtiKulhar,
+    thumbnail: kirtiKulhar,
+    title: "With Actress Kirti Kulhari",
+    description: "Nidhi Jain with popular Bollywood actress Kirti Kulhari at an event.",
+    category: "Events"
+  },
+  {
+    id: 16,
+    url: germanGyan,
+    thumbnail: germanGyan,
+    title: "German Gyan Batch Celebration",
+    description: "Group photo of students celebrating their successful course completion.",
+    category: "Events"
+  },
+  {
+    id: 17,
+    url: germanGyan2,
+    thumbnail: germanGyan2,
+    title: "German Gyan Family",
+    description: "Graduates and students celebrating together at our Delhi centre.",
+    category: "Events"
+  },
+
+  // --- REGULAR GROUP (Centres, Classes, Speaking) ---
+  {
+    id: 18,
+    url: nidhi,
+    thumbnail: nidhi,
+    title: "Nidhi Jain",
+    description: "Founder & Lead Instructor at German Gyan.",
+    category: "Classes"
+  },
+  {
+    id: 19,
+    url: nidhi1,
+    thumbnail: nidhi1,
+    title: "Interactive Classroom Teaching",
+    description: "Nidhi Jain conducting a live session with students.",
+    category: "Classes"
+  },
+  {
+    id: 20,
+    url: nidhi1Copy,
+    thumbnail: nidhi1Copy,
+    title: "Concept-Based Teaching",
+    description: "Simplifying German grammar rules for Indian students.",
+    category: "Classes"
+  },
+  {
+    id: 21,
+    url: nidhi2,
+    thumbnail: nidhi2,
+    title: "Grammar Deep-Dive",
+    description: "Explaining sentence structures and cases on the board.",
+    category: "Classes"
+  },
+  {
+    id: 22,
+    url: nidhi3,
+    thumbnail: nidhi3,
+    title: "Personalized Counseling",
+    description: "Guiding students on study and career prospects in Germany.",
+    category: "Classes"
+  },
+  {
+    id: 23,
+    url: nidhi3Copy,
+    thumbnail: nidhi3Copy,
+    title: "Career Guidance Session",
+    description: "Explaining the Goethe exam modules and scoring system.",
+    category: "Classes"
+  },
+  {
+    id: 24,
+    url: nidhi4,
+    thumbnail: nidhi4,
+    title: "Goethe Exam Preparation",
+    description: "Conducting mock speaking practice sessions.",
+    category: "Classes"
+  },
+  {
+    id: 25,
+    url: nidhi4Copy,
+    thumbnail: nidhi4Copy,
+    title: "Exam Tips & Strategies",
+    description: "Discussing reading and writing section strategies.",
+    category: "Classes"
+  },
+  {
+    id: 26,
+    url: nidhi5,
+    thumbnail: nidhi5,
+    title: "Doubt Clearing Session",
+    description: "Addressing individual student queries during the class.",
+    category: "Classes"
+  },
+  {
+    id: 27,
+    url: nidhi5Copy,
+    thumbnail: nidhi5Copy,
+    title: "One-on-One Interaction",
+    description: "Providing personalized feedback on pronunciation.",
+    category: "Classes"
+  },
+  {
+    id: 28,
+    url: nidhi6,
+    thumbnail: nidhi6,
+    title: "Active Speaking Session",
+    description: "Interactive German conversation practice in class.",
+    category: "Classes"
+  },
+  {
+    id: 29,
+    url: nidhi7,
+    thumbnail: nidhi7,
+    title: "Vocabulary Building",
+    description: "Teaching daily-use German vocabulary and phrases.",
+    category: "Classes"
+  },
+  {
+    id: 30,
+    url: office1,
+    thumbnail: office1,
+    title: "Delhi Centre Classroom",
+    description: "A look inside our main classroom and learning area.",
+    category: "Centres"
+  },
+  {
+    id: 31,
+    url: office2,
+    thumbnail: office2,
+    title: "Spacious Learning Environment",
+    description: "Classrooms designed for comfortable and focused language learning.",
+    category: "Centres"
+  },
+  {
+    id: 32,
+    url: office3,
+    thumbnail: office3,
+    title: "Delhi Classroom Setup",
+    description: "Equipped with interactive smartboard and multimedia systems.",
+    category: "Centres"
+  },
+  {
+    id: 33,
+    url: office4,
+    thumbnail: office4,
+    title: "Bright & Modern Classroom",
+    description: "Air-conditioned classrooms with comfortable seating.",
+    category: "Centres"
+  },
+  {
+    id: 34,
     url: office5,
     thumbnail: office5,
     title: "Noida Extension Centre",
@@ -140,156 +346,140 @@ const photos = [
     category: "Centres"
   },
   {
-    id: 14,
-    url: nidhi4,
-    thumbnail: nidhi4,
-    title: "Exam Preparation Workshop",
-    description: "Goethe exam strategies and mock test discussion.",
-    category: "Classes"
-  },
-  {
-    id: 15,
+    id: 35,
     url: office6,
     thumbnail: office6,
     title: "Classroom Study Session",
-    description: "Students working through vocabulary and reading exercises.",
+    description: "Providing a great study atmosphere for offline batches.",
     category: "Centres"
   },
   {
-    id: 16,
-    url: germanGyan2,
-    thumbnail: germanGyan2,
-    title: "Graduates and Achievers",
-    description: "Our proud students holding their course completion certificates.",
-    category: "Achievements"
-  },
-  {
-    id: 17,
+    id: 36,
     url: office7,
     thumbnail: office7,
-    title: "Multimedia Classroom",
-    description: "Using interactive smartboards to enhance language learning.",
+    title: "Multimedia Board",
+    description: "Utilizing modern tools to make learning interactive and fun.",
     category: "Centres"
   },
   {
-    id: 18,
-    url: nidhi5,
-    thumbnail: nidhi5,
-    title: "Doubt Clearing Session",
-    description: "Nidhi Jain explaining grammar rules and addressing student queries.",
-    category: "Classes"
-  },
-  {
-    id: 19,
+    id: 37,
     url: office8,
     thumbnail: office8,
-    title: "Delhi Centre Classrooms",
-    description: "Comfortable, air-conditioned learning spaces for students.",
+    title: "Delhi Centre Infrastructure",
+    description: "Clean, comfortable, and professional learning spaces.",
     category: "Centres"
   },
   {
-    id: 20,
+    id: 38,
     url: office9,
     thumbnail: office9,
-    title: "Student Learning Session",
-    description: "Active class session focusing on German reading comprehension.",
-    category: "Classes"
+    title: "Classroom Study Desk",
+    description: "Organized seating designed for collaborative group work.",
+    category: "Centres"
   },
   {
-    id: 21,
+    id: 39,
     url: office10,
     thumbnail: office10,
-    title: "Classroom Discussion",
-    description: "Discussing German culture, lifestyle, and work opportunities.",
-    category: "Classes"
+    title: "Interactive Classroom",
+    description: "Setting up group activities and interactive board games.",
+    category: "Centres"
   },
   {
-    id: 22,
+    id: 40,
     url: office11,
     thumbnail: office11,
-    title: "Evening Batch Study",
-    description: "Our dedicated evening batch for working professionals.",
-    category: "Classes"
+    title: "Batch Seating View",
+    description: "Comfortable layout ensuring every student gets Nidhi's attention.",
+    category: "Centres"
   },
   {
-    id: 23,
+    id: 41,
     url: office12,
     thumbnail: office12,
-    title: "Noida Centre Study Space",
-    description: "Modern classroom setup at our Greater Noida West location.",
+    title: "Noida Extension Classrooms",
+    description: "Modern desks and chairs at our Greater Noida West location.",
     category: "Centres"
   },
   {
-    id: 24,
+    id: 42,
     url: office13,
     thumbnail: office13,
-    title: "Weekend Batch Class",
-    description: "Weekend learning sessions designed for students and professionals.",
-    category: "Classes"
+    title: "Study & Discussion Corner",
+    description: "Corner space designed for self-study and peer discussions.",
+    category: "Centres"
   },
   {
-    id: 25,
+    id: 43,
     url: office14,
     thumbnail: office14,
-    title: "Listening Module Prep",
-    description: "Students practicing Goethe listening exam audios.",
+    title: "Listening Corner Setup",
+    description: "Equipped with audio systems for official Goethe listening practice.",
+    category: "Centres"
+  },
+  {
+    id: 44,
+    url: office15,
+    thumbnail: office15,
+    title: "Delhi Preet Vihar Reception",
+    description: "The welcoming lobby and reception area at our Delhi centre.",
+    category: "Centres"
+  },
+  {
+    id: 45,
+    url: speaking1,
+    thumbnail: speaking1,
+    title: "German Speaking Practice",
+    description: "Active conversational German practice with fellow learners.",
     category: "Classes"
   },
   {
-    id: 26,
-    url: office15,
-    thumbnail: office15,
-    title: "Delhi Centre Reception",
-    description: "The welcoming lobby and reception area at our Delhi Preet Vihar centre.",
-    category: "Centres"
+    id: 46,
+    url: speaking2,
+    thumbnail: speaking2,
+    title: "Oral Fluency Sessions",
+    description: "Practicing everyday dialogues and situational speaking.",
+    category: "Classes"
+  },
+  {
+    id: 47,
+    url: speaking3,
+    thumbnail: speaking3,
+    title: "German Pronunciation Drills",
+    description: "Focusing on correct intonation, umlauts, and sentence rhythm.",
+    category: "Classes"
   }
 ];
 
-// Videos Data
+// Local Videos List
 const videos = [
   {
-    id: "6Ka_3tZl6G4",
-    title: "German for Beginners: Lesson 1 (Greetings & Basics)",
-    description: "Learn how to greet people, introduce yourself, and master basic German phrases in this introductory lesson.",
-    duration: "12:45",
-    level: "Beginner (A1)"
+    id: "teaching-video",
+    url: teachingVideo,
+    title: "Teaching German to Student",
+    description: "A glimpse into our interactive, one-on-one German language coaching session.",
+    duration: "0:25",
+    level: "Classroom Session"
   },
   {
-    id: "s3cR14C929g",
-    title: "How to Introduce Yourself in German (Sich vorstellen)",
-    description: "Step-by-step guide to introducing yourself fluently for Goethe speaking exams and social conversations.",
-    duration: "08:30",
-    level: "Beginner (A1-A2)"
-  },
-  {
-    id: "n8N9q-uV_2U",
-    title: "Goethe A1 Speaking Exam: Full Walkthrough & Tips",
-    description: "An in-depth breakdown of the Goethe A1 Speaking module, including common questions and perfect answers.",
-    duration: "15:20",
-    level: "Exam Prep"
-  },
-  {
-    id: "u8-48gW2w7g",
-    title: "Learn German Vocabulary: 100+ Everyday Essentials",
-    description: "Expand your vocabulary rapidly with the most common and useful German words used in daily life.",
-    duration: "25:10",
-    level: "All Levels"
-  },
-  {
-    id: "q3f_N7G23b4",
-    title: "German Speaking Practice: Improve Fluency Fast",
-    description: "Interactive exercises and pronunciation practice designed to boost your speaking confidence.",
-    duration: "10:15",
-    level: "Intermediate (B1)"
-  },
-  {
-    id: "zL1aGZ2s7nI",
-    title: "Mastering German Pronunciation & Umlauts",
-    description: "Clear instructions on how to pronounce difficult German sounds, including Ä, Ö, Ü, and CH.",
-    duration: "11:50",
-    level: "All Levels"
+    id: "student-video",
+    url: studentVideo,
+    title: "Student Experience & Speaking",
+    description: "Hear from our students as they practice speaking and share their learning journey.",
+    duration: "0:06",
+    level: "Student Testimonial"
   }
 ];
+
+// Helper to shuffle an array (Fisher-Yates)
+const shuffleArray = <T,>(array: T[]): T[] => {
+  const arr = [...array];
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+};
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
@@ -300,17 +490,37 @@ export default function Gallery() {
   const [activeTab, setActiveTab] = useState<"photos" | "videos">("photos");
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const [activeVideoId, setActiveVideoId] = useState<string | null>(null);
+  const [displayPhotos, setDisplayPhotos] = useState<PhotoItem[]>(masterPhotos);
+
+  // Prioritize and Shuffle Photos on Load
+  useEffect(() => {
+    // Group A (Priority): Achievements, Awards, Events
+    const priorityPhotos = masterPhotos.filter(p =>
+      p.category === "Achievements" || p.category === "Awards" || p.category === "Events"
+    );
+    // Group B (Regular): Centres, Classes
+    const regularPhotos = masterPhotos.filter(p =>
+      p.category !== "Achievements" && p.category !== "Awards" && p.category !== "Events"
+    );
+
+    // Shuffle both groups
+    const shuffledPriority = shuffleArray(priorityPhotos);
+    const shuffledRegular = shuffleArray(regularPhotos);
+
+    // Combine them with priority at the beginning
+    setDisplayPhotos([...shuffledPriority, ...shuffledRegular]);
+  }, []);
 
   // Lightbox navigation
   const handlePrevPhoto = () => {
     if (lightboxIndex !== null) {
-      setLightboxIndex((prev) => (prev === 0 ? photos.length - 1 : prev! - 1));
+      setLightboxIndex((prev) => (prev === 0 ? displayPhotos.length - 1 : prev! - 1));
     }
   };
 
   const handleNextPhoto = () => {
     if (lightboxIndex !== null) {
-      setLightboxIndex((prev) => (prev === photos.length - 1 ? 0 : prev! + 1));
+      setLightboxIndex((prev) => (prev === displayPhotos.length - 1 ? 0 : prev! + 1));
     }
   };
 
@@ -325,7 +535,7 @@ export default function Gallery() {
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [lightboxIndex]);
+  }, [lightboxIndex, displayPhotos]);
 
   return (
     <div className="min-h-screen bg-background font-sans pt-16">
@@ -417,7 +627,7 @@ export default function Gallery() {
                 transition={{ duration: 0.3 }}
                 className="columns-1 sm:columns-2 md:columns-3 gap-6"
               >
-                {photos.map((photo, index) => (
+                {displayPhotos.map((photo, index) => (
                   <div
                     key={photo.id}
                     onClick={() => setLightboxIndex(index)}
@@ -451,7 +661,7 @@ export default function Gallery() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -15 }}
                 transition={{ duration: 0.3 }}
-                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 max-w-4xl mx-auto"
               >
                 {videos.map((video) => (
                   <div
@@ -461,11 +671,12 @@ export default function Gallery() {
                   >
                     {/* Video Thumbnail Wrapper */}
                     <div className="relative aspect-video bg-muted overflow-hidden">
-                      <img
-                        src={`https://img.youtube.com/vi/${video.id}/mqdefault.jpg`}
-                        alt={video.title}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                        loading="lazy"
+                      <video
+                        src={video.url}
+                        className="w-full h-full object-cover"
+                        preload="metadata"
+                        playsInline
+                        muted
                       />
                       {/* Play Button Overlay */}
                       <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors duration-300 flex items-center justify-center">
@@ -546,15 +757,15 @@ export default function Gallery() {
               onClick={(e) => e.stopPropagation()}
             >
               <img
-                src={photos[lightboxIndex].url}
-                alt={photos[lightboxIndex].title}
+                src={displayPhotos[lightboxIndex].url}
+                alt={displayPhotos[lightboxIndex].title}
                 className="max-w-full max-h-[75vh] object-contain rounded-lg shadow-2xl"
               />
               <div className="text-center mt-4 text-white max-w-xl px-4">
-                <h4 className="text-xl font-bold text-primary">{photos[lightboxIndex].title}</h4>
-                <p className="text-sm text-white/80 mt-1">{photos[lightboxIndex].description}</p>
+                <h4 className="text-xl font-bold text-primary">{displayPhotos[lightboxIndex].title}</h4>
+                <p className="text-sm text-white/80 mt-1">{displayPhotos[lightboxIndex].description}</p>
                 <span className="inline-block mt-2 text-xs text-white/50 bg-white/10 px-2 py-0.5 rounded-full">
-                  {lightboxIndex + 1} / {photos.length}
+                  {lightboxIndex + 1} / {displayPhotos.length}
                 </span>
               </div>
             </motion.div>
@@ -585,13 +796,12 @@ export default function Gallery() {
                 <X className="w-5 h-5" />
               </button>
 
-              <iframe
-                src={`https://www.youtube.com/embed/${activeVideoId}?autoplay=1&rel=0`}
-                title="German Gyan Gallery Video"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
+              <video
+                src={videos.find(v => v.id === activeVideoId)?.url}
+                controls
+                autoPlay
                 className="w-full h-full border-0"
-              ></iframe>
+              />
             </div>
             {/* Background Click to Close */}
             <div className="absolute inset-0" onClick={() => setActiveVideoId(null)} />
