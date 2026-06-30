@@ -73,12 +73,13 @@ interface VideoItem {
   id: string;
   youtubeId?: string;
   url: string;
-  type: "local" | "youtube" | "youtube-short";
+  type: "local" | "youtube" | "youtube-short" | "playlist";
   title: string;
   description: string;
   duration: string;
   level: string;
   aspect: "video" | "short";
+  thumbnail?: string;
 }
 
 // Master Photos List
@@ -495,6 +496,40 @@ const videos: VideoItem[] = [
     level: "Student Testimonial",
     aspect: "video"
   },
+  // --- YouTube Podcasts ---
+  {
+    id: "oSr5JFD9yc0",
+    youtubeId: "oSr5JFD9yc0",
+    url: "https://www.youtube.com/embed/oSr5JFD9yc0",
+    type: "youtube",
+    title: "German Gyan Podcast | Career & Opportunities in Germany",
+    description: "An insightful podcast discussing career opportunities, job search, and language requirements in Germany.",
+    duration: "Podcast",
+    level: "YouTube Podcast",
+    aspect: "video"
+  },
+  {
+    id: "95ZIgRcu-dk",
+    youtubeId: "95ZIgRcu-dk",
+    url: "https://www.youtube.com/embed/95ZIgRcu-dk",
+    type: "youtube",
+    title: "German Gyan Podcast | Student Visa & Academic Pathways",
+    description: "Detailed discussion on university admissions, student visas, and block account requirements for Germany.",
+    duration: "Podcast",
+    level: "YouTube Podcast",
+    aspect: "video"
+  },
+  {
+    id: "GqyKGu0Fzis",
+    youtubeId: "GqyKGu0Fzis",
+    url: "https://www.youtube.com/embed/GqyKGu0Fzis",
+    type: "youtube",
+    title: "German Gyan Podcast | Mastering German Language & Exams",
+    description: "Tips and strategies to learn German faster, clear Goethe exams, and speak like a native.",
+    duration: "Podcast",
+    level: "YouTube Podcast",
+    aspect: "video"
+  },
   // --- YouTube Videos (Widescreen) ---
   {
     id: "y6B15eX8nuw",
@@ -583,6 +618,67 @@ const videos: VideoItem[] = [
     duration: "13:15",
     level: "Career Guide",
     aspect: "video"
+  },
+  // --- YouTube Playlists ---
+  {
+    id: "playlist-1",
+    youtubeId: "PLhy2RAiqlwBHpaItzo3Gv7JzdCQAyU6I8",
+    url: "https://www.youtube.com/embed/videoseries?list=PLhy2RAiqlwBHpaItzo3Gv7JzdCQAyU6I8",
+    type: "playlist",
+    title: "German Speaking & Vocabulary Lessons",
+    description: "A curated playlist of German speaking practice sessions, pronunciation drills, and essential vocabulary.",
+    duration: "Playlist",
+    level: "YouTube Playlist",
+    aspect: "video",
+    thumbnail: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    id: "playlist-2",
+    youtubeId: "PLhy2RAiqlwBG2D6hdoNp8NIv8gYa42p6V",
+    url: "https://www.youtube.com/embed/videoseries?list=PLhy2RAiqlwBG2D6hdoNp8NIv8gYa42p6V",
+    type: "playlist",
+    title: "Complete German A1 Level Course",
+    description: "Learn German from scratch. Step-by-step video lectures covering the entire A1 CEFR syllabus.",
+    duration: "Playlist",
+    level: "YouTube Playlist",
+    aspect: "video",
+    thumbnail: "https://images.unsplash.com/photo-1543167118-0bd791a4cd11?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    id: "playlist-3",
+    youtubeId: "PLhy2RAiqlwBEIwexnNGOONF180SW0_2yz",
+    url: "https://www.youtube.com/embed/videoseries?list=PLhy2RAiqlwBEIwexnNGOONF180SW0_2yz",
+    type: "playlist",
+    title: "German A2 Level Lessons & Grammar",
+    description: "Build on your foundation. Advanced grammar, sentence structures, and situational speaking practice.",
+    duration: "Playlist",
+    level: "YouTube Playlist",
+    aspect: "video",
+    thumbnail: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    id: "playlist-4",
+    youtubeId: "PLhy2RAiqlwBFiYs4xnbT6xz5oN3_nRMXk",
+    url: "https://www.youtube.com/embed/videoseries?list=PLhy2RAiqlwBFiYs4xnbT6xz5oN3_nRMXk",
+    type: "playlist",
+    title: "German B1 Level Intermediate Course",
+    description: "Reach independent user status. In-depth explanations of B1 level topics and conversational skills.",
+    duration: "Playlist",
+    level: "YouTube Playlist",
+    aspect: "video",
+    thumbnail: "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    id: "playlist-5",
+    youtubeId: "PLhy2RAiqlwBE-cSiBokA88Jxm4GYlND-S",
+    url: "https://www.youtube.com/embed/videoseries?list=PLhy2RAiqlwBE-cSiBokA88Jxm4GYlND-S",
+    type: "playlist",
+    title: "Goethe Exam Preparation & Mock Tests",
+    description: "Tips, strategies, and mock paper solutions to help you clear the Goethe-Zertifikat exams.",
+    duration: "Playlist",
+    level: "YouTube Playlist",
+    aspect: "video",
+    thumbnail: "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=600&q=80"
   }
 ];
 
@@ -602,7 +698,7 @@ const fadeUp = {
 };
 
 export default function Gallery() {
-  const [activeTab, setActiveTab] = useState<"photos" | "videos">("photos");
+  const [activeTab, setActiveTab] = useState<"photos" | "videos" | "podcasts" | "playlists">("photos");
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const [activeVideoId, setActiveVideoId] = useState<string | null>(null);
   const [displayPhotos, setDisplayPhotos] = useState<PhotoItem[]>(masterPhotos);
@@ -728,12 +824,46 @@ export default function Gallery() {
                   />
                 )}
               </button>
+              <button
+                onClick={() => setActiveTab("podcasts")}
+                className={`flex items-center gap-2 pb-4 text-base md:text-lg font-medium transition-all relative ${
+                  activeTab === "podcasts"
+                    ? "text-primary font-bold"
+                    : "text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                <span>🎙️</span> YouTube Podcasts
+                {activeTab === "podcasts" && (
+                  <motion.div
+                    layoutId="activeTabUnderline"
+                    className="absolute bottom-0 left-0 right-0 h-[3px] bg-primary rounded-full"
+                    transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                  />
+                )}
+              </button>
+              <button
+                onClick={() => setActiveTab("playlists")}
+                className={`flex items-center gap-2 pb-4 text-base md:text-lg font-medium transition-all relative ${
+                  activeTab === "playlists"
+                    ? "text-primary font-bold"
+                    : "text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                <span>📺</span> YouTube Playlists
+                {activeTab === "playlists" && (
+                  <motion.div
+                    layoutId="activeTabUnderline"
+                    className="absolute bottom-0 left-0 right-0 h-[3px] bg-primary rounded-full"
+                    transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                  />
+                )}
+              </button>
             </div>
           </div>
 
           {/* Tab Content */}
           <AnimatePresence mode="wait">
-            {activeTab === "photos" ? (
+            {activeTab === "photos" && (
               <motion.div
                 key="photos-grid"
                 initial={{ opacity: 0, y: 15 }}
@@ -769,7 +899,9 @@ export default function Gallery() {
                   </div>
                 ))}
               </motion.div>
-            ) : (
+            )}
+
+            {activeTab === "videos" && (
               <motion.div
                 key="videos-grid"
                 initial={{ opacity: 0, y: 15 }}
@@ -778,7 +910,7 @@ export default function Gallery() {
                 transition={{ duration: 0.3 }}
                 className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 max-w-4xl mx-auto"
               >
-                {videos.map((video) => (
+                {videos.filter(v => v.level !== "YouTube Podcast" && v.type !== "playlist").map((video) => (
                   <div
                     key={video.id}
                     onClick={() => {
@@ -795,6 +927,13 @@ export default function Gallery() {
                           preload="metadata"
                           playsInline
                           muted
+                        />
+                      ) : video.thumbnail ? (
+                        <img
+                          src={video.thumbnail}
+                          alt={video.title}
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                          loading="lazy"
                         />
                       ) : (
                         <img
@@ -820,6 +959,134 @@ export default function Gallery() {
                       {/* Duration Tag */}
                       <div className="absolute bottom-2 right-2 bg-black/75 text-white text-xs px-2 py-0.5 rounded font-mono z-10">
                         {video.duration}
+                      </div>
+                    </div>
+
+                    {/* Video Info */}
+                    <div className="p-5 flex-1 flex flex-col justify-between space-y-3">
+                      <div>
+                        <div className="text-xs font-semibold text-primary uppercase tracking-wider">
+                          {video.level}
+                        </div>
+                        <h3 className="font-bold text-lg text-foreground line-clamp-2 mt-1 leading-snug group-hover:text-primary transition-colors">
+                          {video.title}
+                        </h3>
+                        <p className="text-sm text-muted-foreground line-clamp-2 mt-2 leading-relaxed">
+                          {video.description}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </motion.div>
+            )}
+
+            {activeTab === "podcasts" && (
+              <motion.div
+                key="podcasts-grid"
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -15 }}
+                transition={{ duration: 0.3 }}
+                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 max-w-4xl mx-auto"
+              >
+                {videos.filter(v => v.level === "YouTube Podcast").map((video) => (
+                  <div
+                    key={video.id}
+                    onClick={() => {
+                      setActiveVideoId(video.id);
+                    }}
+                    className="group flex flex-col cursor-pointer overflow-hidden rounded-xl border border-border bg-card hover:border-primary/50 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                  >
+                    {/* Video Thumbnail Wrapper */}
+                    <div className="relative bg-muted overflow-hidden aspect-video">
+                      <img
+                        src={`https://img.youtube.com/vi/${video.youtubeId}/0.jpg`}
+                        alt={video.title}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        loading="lazy"
+                      />
+                      
+                      {/* Play Button Overlay */}
+                      <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors duration-300 flex items-center justify-center">
+                        <div className="w-14 h-14 rounded-full bg-primary text-primary-foreground flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform duration-300">
+                          <Play className="w-6 h-6 fill-current translate-x-[2px]" />
+                        </div>
+                      </div>
+
+                      {/* Video Type Tag */}
+                      <div className="absolute top-3 left-3 bg-black/75 text-white text-[10px] uppercase font-bold px-2 py-0.5 rounded tracking-wider z-10">
+                        YouTube
+                      </div>
+
+                      {/* Duration Tag */}
+                      <div className="absolute bottom-2 right-2 bg-black/75 text-white text-xs px-2 py-0.5 rounded font-mono z-10">
+                        {video.duration}
+                      </div>
+                    </div>
+
+                    {/* Video Info */}
+                    <div className="p-5 flex-1 flex flex-col justify-between space-y-3">
+                      <div>
+                        <div className="text-xs font-semibold text-primary uppercase tracking-wider">
+                          {video.level}
+                        </div>
+                        <h3 className="font-bold text-lg text-foreground line-clamp-2 mt-1 leading-snug group-hover:text-primary transition-colors">
+                          {video.title}
+                        </h3>
+                        <p className="text-sm text-muted-foreground line-clamp-2 mt-2 leading-relaxed">
+                          {video.description}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </motion.div>
+            )}
+
+            {activeTab === "playlists" && (
+              <motion.div
+                key="playlists-grid"
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -15 }}
+                transition={{ duration: 0.3 }}
+                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 max-w-4xl mx-auto"
+              >
+                {videos.filter(v => v.type === "playlist").map((video) => (
+                  <div
+                    key={video.id}
+                    onClick={() => {
+                      setActiveVideoId(video.id);
+                    }}
+                    className="group flex flex-col cursor-pointer overflow-hidden rounded-xl border border-border bg-card hover:border-primary/50 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                  >
+                    {/* Video Thumbnail Wrapper */}
+                    <div className="relative bg-muted overflow-hidden aspect-video">
+                      {video.thumbnail && (
+                        <img
+                          src={video.thumbnail}
+                          alt={video.title}
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                          loading="lazy"
+                        />
+                      )}
+                      
+                      {/* Play Button Overlay */}
+                      <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors duration-300 flex items-center justify-center">
+                        <div className="w-14 h-14 rounded-full bg-primary text-primary-foreground flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform duration-300">
+                          <Play className="w-6 h-6 fill-current translate-x-[2px]" />
+                        </div>
+                      </div>
+
+                      {/* Video Type Tag */}
+                      <div className="absolute top-3 left-3 bg-black/75 text-white text-[10px] uppercase font-bold px-2 py-0.5 rounded tracking-wider z-10">
+                        Playlist
+                      </div>
+
+                      {/* Duration Tag */}
+                      <div className="absolute bottom-2 right-2 bg-black/75 text-white text-xs px-2 py-0.5 rounded font-mono z-10">
+                        Playlist
                       </div>
                     </div>
 
@@ -946,7 +1213,7 @@ export default function Gallery() {
                     />
                   ) : (
                     <iframe
-                      src={`${activeVideo.url}?autoplay=1&rel=0`}
+                      src={activeVideo.url.includes("?") ? `${activeVideo.url}&autoplay=1&rel=0` : `${activeVideo.url}?autoplay=1&rel=0`}
                       title={activeVideo.title}
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                       allowFullScreen
