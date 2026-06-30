@@ -1,6 +1,13 @@
 import { Link } from "wouter";
-import { Phone, Mail, MapPin, Instagram, Facebook, Youtube } from "lucide-react";
+import { Phone, Mail, MapPin, Instagram, Facebook, Youtube, Twitter, Linkedin } from "lucide-react";
 import logo from "@assets/GERMAN_LOGO_1780803337341.png";
+
+// Spotify SVG Component
+const SpotifyIcon = ({ className }: { className?: string }) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className={className || "w-5 h-5"}>
+    <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.586 14.424c-.18.295-.565.387-.86.207-2.377-1.454-5.37-1.783-8.893-.982-.336.075-.668-.135-.744-.47-.076-.336.135-.668.47-.743 3.856-.88 7.15-.51 9.82 1.13.296.18.387.563.207.858zm1.225-2.72c-.227.367-.707.487-1.074.26-2.72-1.672-6.87-2.157-10.075-1.183-.413.125-.85-.107-.975-.52-.125-.413.107-.85.52-.975 3.66-1.11 8.225-.573 11.344 1.344.367.227.487.707.26 1.074zm.107-2.846C14.636 8.817 9.217 8.638 6.07 9.593c-.48.146-.98-.125-1.127-.605-.146-.48.125-.98.605-1.127 3.62-1.1 9.6-0.897 13.48 1.41.433.258.577.82.32 1.253-.258.433-.82.577-1.253.32z"/>
+  </svg>
+);
 
 export default function Footer() {
   return (
@@ -60,11 +67,14 @@ export default function Footer() {
 
           <div>
             <h4 className="font-bold mb-4">Follow Us</h4>
-            <div className="flex gap-4">
+            <div className="flex flex-wrap gap-3">
               {[
-                { href: "https://instagram.com/Germangyan04", icon: Instagram },
+                { href: "https://www.instagram.com/germangyan1/", icon: Instagram },
                 { href: "https://www.facebook.com/Germangyan1", icon: Facebook },
-                { href: "https://www.youtube.com/c/GermanGyan", icon: Youtube },
+                { href: "http://youtube.com/c/GermanGyan", icon: Youtube },
+                { href: "https://twitter.com/Germangyan04", icon: Twitter },
+                { href: "https://www.linkedin.com/company/german-gyan", icon: Linkedin },
+                { href: "https://open.spotify.com/show/2fxS8DOBaRhWyepyOYHl6b?si=Q7K7syabQemRvhQzVzgCQg", icon: SpotifyIcon },
               ].map(({ href, icon: Icon }, i) => (
                 <a
                   key={i}

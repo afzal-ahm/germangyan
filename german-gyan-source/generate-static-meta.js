@@ -122,6 +122,12 @@ const pages = [
     description: "Get in touch with German Gyan — call or WhatsApp +91-96434-30783, email hello@germangyan.in, or fill in our inquiry form to book a free demo class.",
     keywords: "contact German Gyan, German course enquiry, German class fees, book German demo class, German Gyan WhatsApp, German language admission",
   },
+  {
+    route: "/gallery",
+    title: "Our Gallery | German Gyan",
+    description: "Browse photos of our German classes, student celebrations, and video lessons. Get a glimpse of the learning experience at German Gyan.",
+    keywords: "German Gyan gallery, German classes photos, study German videos, German language institute classroom, Goethe celebrations",
+  },
 ];
 
 function injectMeta(html, { title, description, keywords, route }) {

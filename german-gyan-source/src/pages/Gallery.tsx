@@ -4,71 +4,244 @@ import { X, ChevronLeft, ChevronRight, Play, Maximize2 } from "lucide-react";
 import PageMeta from "@/components/PageMeta";
 import galleryHero from "@assets/gallery-hero.png";
 
+// Import real photos
+import certificate1 from "@assets/certificate-1.jpeg";
+import germanGyan2 from "@assets/german-gyan-2.jpeg";
+import germanGyan from "@assets/german-gyan.jpeg";
+import nidhi1 from "@assets/nidhi-1.jpeg";
+import nidhi2 from "@assets/nidhi-2.jpeg";
+import nidhi3 from "@assets/nidhi-3.jpeg";
+import nidhi4 from "@assets/nidhi-4.jpeg";
+import nidhi5 from "@assets/nidhi-5.jpeg";
+import nidhi from "@assets/nidhi.jpeg";
+import office1 from "@assets/office-1.jpeg";
+import office2 from "@assets/office-2.jpeg";
+import office3 from "@assets/office-3.jpeg";
+import office4 from "@assets/office-4.jpeg";
+import office5 from "@assets/office-5.jpeg";
+import office6 from "@assets/office-6.jpeg";
+import office7 from "@assets/office-7.jpeg";
+import office8 from "@assets/office-8.jpeg";
+import office9 from "@assets/office-9.jpeg";
+import office10 from "@assets/office-10.jpeg";
+import office11 from "@assets/office-11.jpeg";
+import office12 from "@assets/office-12.jpeg";
+import office13 from "@assets/office-13.jpeg";
+import office14 from "@assets/office-14.jpeg";
+import office15 from "@assets/office-15.jpeg";
+import speaking1 from "@assets/speaking-1.jpeg";
+import speaking2 from "@assets/speaking-2.jpeg";
+import speaking3 from "@assets/speaking-3.jpeg";
+
 // Photos Data
 const photos = [
   {
     id: 1,
-    url: "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=1200&q=80",
-    thumbnail: "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=600&q=80",
-    title: "Interactive German Class",
-    description: "Students actively participating in a group grammar and vocabulary session.",
-    category: "Classes"
+    url: office1,
+    thumbnail: office1,
+    title: "German Gyan Delhi Centre",
+    description: "A look inside our main classroom and learning area.",
+    category: "Centres"
   },
   {
     id: 2,
-    url: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80",
-    thumbnail: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=600&q=80",
-    title: "Goethe Exam Achievers",
-    description: "Our students celebrating their successful Goethe-Zertifikat results.",
-    category: "Achievements"
+    url: nidhi1,
+    thumbnail: nidhi1,
+    title: "Live Classroom Lecture",
+    description: "Nidhi Jain conducting an interactive session with students.",
+    category: "Classes"
   },
   {
     id: 3,
-    url: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1200&q=80",
-    thumbnail: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=600&q=80",
-    title: "German Grammar Workshop",
-    description: "Deep-dive session resolving complex German sentence structures.",
-    category: "Workshops"
+    url: certificate1,
+    thumbnail: certificate1,
+    title: "Goethe Zertifikat Success",
+    description: "Celebrating our students passing their Goethe certification exams.",
+    category: "Achievements"
   },
   {
     id: 4,
-    url: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
-    thumbnail: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=600&q=80",
-    title: "Digital Learning & Practice",
-    description: "Students utilizing interactive tools for Goethe exam preparation.",
+    url: speaking1,
+    thumbnail: speaking1,
+    title: "Speaking Practice",
+    description: "Active German conversation drills and pronunciation training.",
     category: "Classes"
   },
   {
     id: 5,
-    url: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1200&q=80",
-    thumbnail: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=600&q=80",
-    title: "Cultural Exchange Day",
-    description: "Exploring German culture, festivals, and traditions together.",
-    category: "Events"
+    url: office2,
+    thumbnail: office2,
+    title: "Delhi Centre Classroom",
+    description: "Spacious classrooms designed for focused language learning.",
+    category: "Centres"
   },
   {
     id: 6,
-    url: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1200&q=80",
-    thumbnail: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=600&q=80",
-    title: "Successful Batches",
-    description: "Group photo of our A2 level graduates holding their certificates.",
-    category: "Achievements"
+    url: nidhi2,
+    thumbnail: nidhi2,
+    title: "Grammar & Concept Session",
+    description: "Breaking down complex German sentence structures.",
+    category: "Classes"
   },
   {
     id: 7,
-    url: "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1200&q=80",
-    thumbnail: "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=600&q=80",
-    title: "Speaking & Pronunciation Practice",
-    description: "One-on-one speaking drills to build conversational confidence.",
+    url: speaking2,
+    thumbnail: speaking2,
+    title: "Interactive Speaking",
+    description: "Students collaborating on conversational German exercises.",
     category: "Classes"
   },
   {
     id: 8,
-    url: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1200&q=80",
-    thumbnail: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80",
-    title: "Personalized Tutoring Sessions",
-    description: "Tailored attention for students aiming for higher Goethe levels.",
+    url: office3,
+    thumbnail: office3,
+    title: "Delhi Classroom Setup",
+    description: "Our comfortable student seating and multimedia board setup.",
+    category: "Centres"
+  },
+  {
+    id: 9,
+    url: germanGyan,
+    thumbnail: germanGyan,
+    title: "German Gyan Batch Celebration",
+    description: "Celebrating batch completion and successful learning milestones.",
+    category: "Events"
+  },
+  {
+    id: 10,
+    url: nidhi3,
+    thumbnail: nidhi3,
+    title: "Personalized Guidance",
+    description: "One-on-one student counseling for higher education in Germany.",
     category: "Classes"
+  },
+  {
+    id: 11,
+    url: office4,
+    thumbnail: office4,
+    title: "Classroom Learning Space",
+    description: "Well-equipped classrooms providing a great study atmosphere.",
+    category: "Centres"
+  },
+  {
+    id: 12,
+    url: speaking3,
+    thumbnail: speaking3,
+    title: "Pronunciation Practice",
+    description: "Dedicated drills to master German phonetics and accent.",
+    category: "Classes"
+  },
+  {
+    id: 13,
+    url: office5,
+    thumbnail: office5,
+    title: "Noida Extension Centre",
+    description: "Classroom view of our Greater Noida West study centre.",
+    category: "Centres"
+  },
+  {
+    id: 14,
+    url: nidhi4,
+    thumbnail: nidhi4,
+    title: "Exam Preparation Workshop",
+    description: "Goethe exam strategies and mock test discussion.",
+    category: "Classes"
+  },
+  {
+    id: 15,
+    url: office6,
+    thumbnail: office6,
+    title: "Classroom Study Session",
+    description: "Students working through vocabulary and reading exercises.",
+    category: "Centres"
+  },
+  {
+    id: 16,
+    url: germanGyan2,
+    thumbnail: germanGyan2,
+    title: "Graduates and Achievers",
+    description: "Our proud students holding their course completion certificates.",
+    category: "Achievements"
+  },
+  {
+    id: 17,
+    url: office7,
+    thumbnail: office7,
+    title: "Multimedia Classroom",
+    description: "Using interactive smartboards to enhance language learning.",
+    category: "Centres"
+  },
+  {
+    id: 18,
+    url: nidhi5,
+    thumbnail: nidhi5,
+    title: "Doubt Clearing Session",
+    description: "Nidhi Jain explaining grammar rules and addressing student queries.",
+    category: "Classes"
+  },
+  {
+    id: 19,
+    url: office8,
+    thumbnail: office8,
+    title: "Delhi Centre Classrooms",
+    description: "Comfortable, air-conditioned learning spaces for students.",
+    category: "Centres"
+  },
+  {
+    id: 20,
+    url: office9,
+    thumbnail: office9,
+    title: "Student Learning Session",
+    description: "Active class session focusing on German reading comprehension.",
+    category: "Classes"
+  },
+  {
+    id: 21,
+    url: office10,
+    thumbnail: office10,
+    title: "Classroom Discussion",
+    description: "Discussing German culture, lifestyle, and work opportunities.",
+    category: "Classes"
+  },
+  {
+    id: 22,
+    url: office11,
+    thumbnail: office11,
+    title: "Evening Batch Study",
+    description: "Our dedicated evening batch for working professionals.",
+    category: "Classes"
+  },
+  {
+    id: 23,
+    url: office12,
+    thumbnail: office12,
+    title: "Noida Centre Study Space",
+    description: "Modern classroom setup at our Greater Noida West location.",
+    category: "Centres"
+  },
+  {
+    id: 24,
+    url: office13,
+    thumbnail: office13,
+    title: "Weekend Batch Class",
+    description: "Weekend learning sessions designed for students and professionals.",
+    category: "Classes"
+  },
+  {
+    id: 25,
+    url: office14,
+    thumbnail: office14,
+    title: "Listening Module Prep",
+    description: "Students practicing Goethe listening exam audios.",
+    category: "Classes"
+  },
+  {
+    id: 26,
+    url: office15,
+    thumbnail: office15,
+    title: "Delhi Centre Reception",
+    description: "The welcoming lobby and reception area at our Delhi Preet Vihar centre.",
+    category: "Centres"
   }
 ];
 
@@ -242,18 +415,18 @@ export default function Gallery() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -15 }}
                 transition={{ duration: 0.3 }}
-                className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"
+                className="columns-1 sm:columns-2 md:columns-3 gap-6"
               >
                 {photos.map((photo, index) => (
                   <div
                     key={photo.id}
                     onClick={() => setLightboxIndex(index)}
-                    className="group relative cursor-pointer overflow-hidden rounded-xl bg-muted border border-border/50 aspect-video shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                    className="break-inside-avoid mb-6 group relative cursor-pointer overflow-hidden rounded-xl bg-muted border border-border/50 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
                   >
                     <img
                       src={photo.thumbnail}
                       alt={photo.title}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      className="w-full h-auto block transition-transform duration-500 group-hover:scale-105"
                       loading="lazy"
                     />
                     {/* Hover Overlay */}
