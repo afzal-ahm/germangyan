@@ -1,0 +1,82 @@
+import { Switch, Route, Router as WouterRouter } from "wouter";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { Toaster } from "@/components/ui/toaster";
+import { TooltipProvider } from "@/components/ui/tooltip";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import AnnouncementBar from "@/components/AnnouncementBar";
+import WhatsAppButton from "@/components/WhatsAppButton";
+import Preloader from "@/components/Preloader";
+import Home from "@/pages/Home";
+import About from "@/pages/About";
+import Courses from "@/pages/Courses";
+import Instructor from "@/pages/Instructor";
+import Contact from "@/pages/Contact";
+import NotFound from "@/pages/NotFound";
+import A1Course from "@/pages/courses/A1Course";
+import A2Course from "@/pages/courses/A2Course";
+import B1Course from "@/pages/courses/B1Course";
+import B2Course from "@/pages/courses/B2Course";
+import C1Course from "@/pages/courses/C1Course";
+import C2Course from "@/pages/courses/C2Course";
+import TeacherTraining from "@/pages/courses/TeacherTraining";
+import CrashCourses from "@/pages/courses/CrashCourses";
+import BrushUpClasses from "@/pages/courses/BrushUpClasses";
+import OneToOne from "@/pages/courses/OneToOne";
+import CorporateTraining from "@/pages/courses/CorporateTraining";
+import SchoolPrograms from "@/pages/courses/SchoolPrograms";
+import SpeakingPractice from "@/pages/courses/SpeakingPractice";
+import ExamPreparation from "@/pages/courses/ExamPreparation";
+
+const queryClient = new QueryClient();
+
+function Router() {
+  return (
+    <Switch>
+      <Route path="/" component={Home} />
+      <Route path="/about" component={About} />
+      <Route path="/courses" component={Courses} />
+      <Route path="/courses/a1-level-german-course" component={A1Course} />
+      <Route path="/courses/a2-level-german-course" component={A2Course} />
+      <Route path="/courses/b1-level-german-course" component={B1Course} />
+      <Route path="/courses/b2-level-german-course" component={B2Course} />
+      <Route path="/courses/c1-level-german-course" component={C1Course} />
+      <Route path="/courses/c2-level-german-course" component={C2Course} />
+      <Route path="/courses/german-teacher-training-program" component={TeacherTraining} />
+      <Route path="/courses/german-crash-courses" component={CrashCourses} />
+      <Route path="/courses/german-brush-up-classes" component={BrushUpClasses} />
+      <Route path="/courses/one-to-one-german-sessions" component={OneToOne} />
+      <Route path="/courses/corporate-training" component={CorporateTraining} />
+      <Route path="/courses/school-german-programs" component={SchoolPrograms} />
+      <Route path="/courses/german-speaking-practice-sessions" component={SpeakingPractice} />
+      <Route path="/courses/german-exam-preparation-sessions" component={ExamPreparation} />
+      <Route path="/instructor" component={Instructor} />
+      <Route path="/contact" component={Contact} />
+      <Route component={NotFound} />
+    </Switch>
+  );
+}
+
+function App() {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
+          <AnnouncementBar />
+          <div className="flex flex-col min-h-[100dvh]">
+            <Navbar />
+            <main className="flex-1">
+              <Router />
+            </main>
+            <Footer />
+          </div>
+        </WouterRouter>
+        <Preloader />
+        <WhatsAppButton />
+        <Toaster />
+      </TooltipProvider>
+    </QueryClientProvider>
+  );
+}
+
+export default App;
