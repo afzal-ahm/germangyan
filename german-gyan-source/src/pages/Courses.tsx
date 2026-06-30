@@ -20,7 +20,7 @@ const levelCourses = [
 
 const specialCourses = [
   { title: "Teacher Training Program", href: "/courses/german-teacher-training-program", desc: "Become a certified German language teacher. Learn pedagogy, lesson planning, and teaching techniques.", tag: "Professional" },
-  { title: "Crash Courses", href: "/courses/german-crash-courses", desc: "Intensive short-term programmes for rapid progress. Ideal for urgent deadlines.", tag: "Intensive" },
+  { title: "Brushup Course", href: "/courses/german-brushup-course", desc: "Refresh previously learned concepts, improve fluency, and regain confidence before exams or relocation.", tag: "Refresher" },
   { title: "Brush-Up Classes", href: "/courses/german-brush-up-classes", desc: "Revive and refresh your existing German skills with targeted focused sessions.", tag: "Refresher" },
   { title: "1-on-1 German Sessions", href: "/courses/one-to-one-german-sessions", desc: "Fully personalised learning at your own pace, schedule, and focus areas.", tag: "Personalised" },
   { title: "Corporate Training", href: "/courses/corporate-training", desc: "Custom German programmes for teams and organisations. Business German delivery.", tag: "Business" },
@@ -34,8 +34,8 @@ export default function Courses() {
     <div className="min-h-screen bg-background font-sans pt-20">
       <PageMeta
         title="All German Courses | German Gyan"
-        description="Explore all German courses at German Gyan — A1, A2, B1, B2, C1, C2 levels plus specialised programmes like crash courses, corporate training, one-to-one sessions and exam prep."
-        keywords="German language courses India, A1 to C2 German, Goethe exam preparation, German crash course, corporate German training, German speaking practice"
+        description="Explore all German courses at German Gyan — A1, A2, B1, B2, C1, C2 levels plus specialised programmes like brushup course, corporate training, one-to-one sessions and exam prep."
+        keywords="German language courses India, A1 to C2 German, Goethe exam preparation, German brushup course, corporate German training, German speaking practice"
       />
       {/* Hero */}
       <section className="py-20 px-4 bg-muted/30">

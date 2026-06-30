@@ -63,10 +63,10 @@ const pages = [
     keywords: "C2 German course, mastery German, German proficiency, Goethe C2, German mastery level, German language expert India",
   },
   {
-    route: "/courses/german-crash-courses",
-    title: "German Crash Courses | Fast-Track German | German Gyan",
-    description: "Intensive German crash courses for rapid progress. Ideal for urgent Goethe exam deadlines, visa requirements, or fast-track learning goals. Available for all CEFR levels.",
-    keywords: "German crash course India, intensive German course, fast track German, urgent Goethe exam prep, German language short course",
+    route: "/courses/german-brushup-course",
+    title: "German Brushup Course | Refresh Your German | German Gyan",
+    description: "Refresh your German language skills, revise grammar, improve speaking fluency, and rebuild your confidence with our structured German Brushup Course.",
+    keywords: "German brushup course, refresh German skills, revise German grammar, German speaking practice, German language refresher, German Gyan",
   },
   {
     route: "/courses/german-brush-up-classes",

@@ -36,7 +36,7 @@ const courses = [
 ];
 
 const specialCourses = [
-  { title: "Crash Courses", desc: "Intensive short-term programmes for rapid progress.", href: "/courses/german-crash-courses" },
+  { title: "Brushup Course", desc: "Refresh previously learned concepts, improve fluency, and regain confidence.", href: "/courses/german-brushup-course" },
   { title: "Corporate Training", desc: "Custom German programmes for teams and organisations.", href: "/courses/corporate-training" },
   { title: "1-on-1 Sessions", desc: "Personalised learning at your own pace.", href: "/courses/one-to-one-german-sessions" },
   { title: "Exam Preparation", desc: "Targeted Goethe exam coaching for all levels.", href: "/courses/german-exam-preparation-sessions" },

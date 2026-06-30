@@ -79,7 +79,8 @@ export default function Contact() {
             {[
               { icon: Phone, label: "Phone / WhatsApp", value: "+91-96434-30783", href: "tel:+919643430783" },
               { icon: Mail, label: "Email", value: "contact@germangyan.com", href: "mailto:contact@germangyan.com" },
-              { icon: MapPin, label: "Location", value: "11 Hargobind Enclave, Near Karkardooma Metro Station, opposite Metro Pillar 118, Delhi-110092 (Online Accross India)", href: "https://maps.app.goo.gl/wqTDkYfAw4SUX1YG9" },
+              { icon: MapPin, label: "Delhi Branch", value: "2, COMMERCIAL COMPLEX, 301, 3rd Floor, Savitri Sadan, Preet Vihar, Delhi, 110092", href: "https://maps.app.goo.gl/67qRoNxHkeGn1yET7" },
+              { icon: MapPin, label: "Noida Branch", value: "Royal Nest, Greater Noida W Rd, Tech Zone IV, Amrapali Dream Valley, Greater Noida, Ithaira, Uttar Pradesh 201318", href: "https://maps.app.goo.gl/rLbyhGrwsVuvRCYr6" },
             ].map(({ icon: Icon, label, value, href }, i) => (
               <motion.div key={i} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
                 <Card className="border-border/50">

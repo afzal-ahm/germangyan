@@ -58,9 +58,18 @@ export default function Footer() {
                 <Mail className="w-4 h-4 text-white" />
                 <span>contact@germangyan.com</span>
               </li>
-              <li className="flex items-center gap-2">
-                <MapPin className="w-4 h-4 text-white" />
-                <span>Delhi, Noida</span>
+              <li className="flex items-start gap-2">
+                <MapPin className="w-4 h-4 text-white mt-1 shrink-0" />
+                <div className="flex flex-col gap-2.5 text-xs text-secondary-foreground/80">
+                  <a href="https://maps.app.goo.gl/67qRoNxHkeGn1yET7" target="_blank" rel="noreferrer" className="hover:text-primary transition-colors leading-relaxed">
+                    <strong className="text-white block mb-0.5">Delhi Branch:</strong>
+                    2, COMMERCIAL COMPLEX, 301, 3rd Floor, Savitri Sadan, Preet Vihar, Delhi, 110092
+                  </a>
+                  <a href="https://maps.app.goo.gl/rLbyhGrwsVuvRCYr6" target="_blank" rel="noreferrer" className="hover:text-primary transition-colors leading-relaxed">
+                    <strong className="text-white block mb-0.5">Noida Branch:</strong>
+                    Royal Nest, Greater Noida W Rd, Tech Zone IV, Amrapali Dream Valley, Greater Noida, Ithaira, Uttar Pradesh 201318
+                  </a>
+                </div>
               </li>
             </ul>
           </div>

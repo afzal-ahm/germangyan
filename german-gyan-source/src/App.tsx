@@ -20,7 +20,7 @@ import B2Course from "@/pages/courses/B2Course";
 import C1Course from "@/pages/courses/C1Course";
 import C2Course from "@/pages/courses/C2Course";
 import TeacherTraining from "@/pages/courses/TeacherTraining";
-import CrashCourses from "@/pages/courses/CrashCourses";
+import BrushupCourse from "@/pages/courses/BrushupCourse";
 import BrushUpClasses from "@/pages/courses/BrushUpClasses";
 import OneToOne from "@/pages/courses/OneToOne";
 import CorporateTraining from "@/pages/courses/CorporateTraining";
@@ -43,7 +43,7 @@ function Router() {
       <Route path="/courses/c1-level-german-course" component={C1Course} />
       <Route path="/courses/c2-level-german-course" component={C2Course} />
       <Route path="/courses/german-teacher-training-program" component={TeacherTraining} />
-      <Route path="/courses/german-crash-courses" component={CrashCourses} />
+      <Route path="/courses/german-brushup-course" component={BrushupCourse} />
       <Route path="/courses/german-brush-up-classes" component={BrushUpClasses} />
       <Route path="/courses/one-to-one-german-sessions" component={OneToOne} />
       <Route path="/courses/corporate-training" component={CorporateTraining} />
