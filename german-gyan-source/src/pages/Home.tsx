@@ -7,22 +7,35 @@ import { CheckCircle2, Users, BookOpen, Award, Star, ChevronLeft, ChevronRight, 
 import PageMeta from "@/components/PageMeta";
 import FAQSection from "@/components/FAQSection";
 
-// Import Hero Photo
-import erPhoto from "@assets/er.jpg";
+// Import Hero Photos
+import banner1 from "@assets/banner 1.png";
+import banner2 from "@assets/banner 2.png";
+import banner3 from "@assets/banner 3.png";
+import banner4 from "@assets/baner 4.png";
 
 const fadeUp = { hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } };
 const stagger = { hidden: {}, visible: { transition: { staggerChildren: 0.1 } } };
 
 const carouselImages = [
   {
-    url: erPhoto,
-    title: "Expert German Training",
-    desc: "Join our comprehensive online and offline courses designed to help you speak German fluently."
+    url: banner1,
+    title: "India's Premier German Language Institute",
+    desc: "Achieve fluency and official certifications with expert trainers and structured learning."
   },
   {
-    url: erPhoto,
-    title: "Goethe Exam Preparation",
-    desc: "Achieve high scores with our targeted coaching, mock tests, and personalized feedback."
+    url: banner2,
+    title: "Flexible Learning Formats",
+    desc: "Learn German through interactive online classes 7 days a week, or offline at our Delhi & Noida centers."
+  },
+  {
+    url: banner3,
+    title: "Goethe Exam Success",
+    desc: "100% focused preparation for Goethe, TELC, TestDaF & ÖSD exams with proven high pass rates."
+  },
+  {
+    url: banner4,
+    title: "Expert & Certified Trainers",
+    desc: "Learn from passionate, certified trainers using practical and interactive teaching methods."
   }
 ];
 
