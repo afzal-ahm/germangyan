@@ -4,9 +4,9 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Phone, Mail, MapPin, MessageCircle, CheckCircle2, AlertCircle } from "lucide-react";
 import PageMeta from "@/components/PageMeta";
+import FAQSection from "@/components/FAQSection";
 import { FORMSPREE_ENDPOINT } from "@/config";
 
 const fadeUp = { hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } };
@@ -227,26 +227,7 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="py-16 bg-muted/20 px-4">
-        <div className="container mx-auto max-w-3xl">
-          <h2 className="text-2xl font-bold mb-8 text-center">Quick Questions</h2>
-          <Accordion type="single" collapsible className="w-full bg-background rounded-xl p-4 shadow-sm border border-border/50">
-            {[
-              { q: "How fast will I hear back?", a: "We typically respond to all inquiries within 24 hours during business days via WhatsApp or email." },
-              { q: "Can I pay in installments?", a: "Yes, we offer flexible payment plans for our comprehensive bundle courses. Please mention your request in the message box." },
-              { q: "Do I need to buy textbooks?", a: "We provide our own custom study materials and worksheets. However, standard reference books for Goethe exam preparation are recommended and we will guide you on which ones to get." },
-              { q: "Are classes online or offline?", a: "Both! We offer online classes for students across India and offline classes at our centre. You can also switch between modes as needed." },
-              { q: "Is there a free trial class?", a: "Yes! We offer a free demo class so you can experience our teaching style before enrolling. Book through the contact form or WhatsApp." },
-            ].map((item, i) => (
-              <AccordionItem key={i} value={`item-${i}`} className="border-b-0">
-                <AccordionTrigger className="text-left">{item.q}</AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">{item.a}</AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </div>
-      </section>
+      <FAQSection page="contact" />
     </div>
   );
 }

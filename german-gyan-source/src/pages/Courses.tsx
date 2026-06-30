@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ChevronRight } from "lucide-react";
 import PageMeta from "@/components/PageMeta";
+import FAQSection from "@/components/FAQSection";
 
 const fadeUp = { hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } };
 
@@ -111,6 +112,8 @@ export default function Courses() {
           </div>
         </div>
       </section>
+
+      <FAQSection page="courses" />
 
       {/* CTA */}
       <section className="py-20 bg-secondary text-secondary-foreground text-center px-4">

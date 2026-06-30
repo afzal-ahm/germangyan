@@ -11,6 +11,7 @@ import Home from "@/pages/Home";
 import About from "@/pages/About";
 import Courses from "@/pages/Courses";
 import Instructor from "@/pages/Instructor";
+import Gallery from "@/pages/Gallery";
 import Contact from "@/pages/Contact";
 import NotFound from "@/pages/NotFound";
 import A1Course from "@/pages/courses/A1Course";
@@ -51,6 +52,7 @@ function Router() {
       <Route path="/courses/german-speaking-practice-sessions" component={SpeakingPractice} />
       <Route path="/courses/german-exam-preparation-sessions" component={ExamPreparation} />
       <Route path="/instructor" component={Instructor} />
+      <Route path="/gallery" component={Gallery} />
       <Route path="/contact" component={Contact} />
       <Route component={NotFound} />
     </Switch>

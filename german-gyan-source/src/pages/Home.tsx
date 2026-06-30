@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle2, Users, BookOpen, Award, Star, ChevronRight, Phone } from "lucide-react";
 import PageMeta from "@/components/PageMeta";
+import FAQSection from "@/components/FAQSection";
 
 const fadeUp = { hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } };
 const stagger = { hidden: {}, visible: { transition: { staggerChildren: 0.1 } } };
@@ -285,6 +286,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <FAQSection page="home" />
 
       {/* CTA */}
       <section className="py-20 bg-secondary text-secondary-foreground text-center px-4">
