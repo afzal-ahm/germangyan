@@ -68,6 +68,18 @@ interface PhotoItem {
   category: "Achievements" | "Awards" | "Events" | "Centres" | "Classes";
 }
 
+interface VideoItem {
+  id: string;
+  youtubeId?: string;
+  url: string;
+  type: "local" | "youtube" | "youtube-short";
+  title: string;
+  description: string;
+  duration: string;
+  level: string;
+  aspect: "video" | "short";
+}
+
 // Master Photos List
 const masterPhotos: PhotoItem[] = [
   // --- PRIORITY GROUP (Achievements, Awards, Events) ---
@@ -451,23 +463,117 @@ const masterPhotos: PhotoItem[] = [
   }
 ];
 
-// Local Videos List
-const videos = [
+// Mixed Videos List (Local + YouTube)
+const videos: VideoItem[] = [
+  // --- Local Videos ---
   {
     id: "teaching-video",
     url: teachingVideo,
+    type: "local",
     title: "Teaching German to Student",
     description: "A glimpse into our interactive, one-on-one German language coaching session.",
     duration: "0:25",
-    level: "Classroom Session"
+    level: "Classroom Session",
+    aspect: "video"
   },
   {
     id: "student-video",
     url: studentVideo,
+    type: "local",
     title: "Student Experience & Speaking",
     description: "Hear from our students as they practice speaking and share their learning journey.",
     duration: "0:06",
-    level: "Student Testimonial"
+    level: "Student Testimonial",
+    aspect: "video"
+  },
+  // --- YouTube Videos (Widescreen) ---
+  {
+    id: "y6B15eX8nuw",
+    youtubeId: "y6B15eX8nuw",
+    url: "https://www.youtube.com/embed/y6B15eX8nuw",
+    type: "youtube",
+    title: "German Vocabulary & Speaking",
+    description: "Learn essential German vocabulary and improve your speaking skills with Nidhi Jain.",
+    duration: "10:15",
+    level: "Vocabulary",
+    aspect: "video"
+  },
+  {
+    id: "HZ_WEMZzIUk",
+    youtubeId: "HZ_WEMZzIUk",
+    url: "https://www.youtube.com/embed/HZ_WEMZzIUk",
+    type: "youtube",
+    title: "German Grammar Rules",
+    description: "Mastering complex German grammar structures and sentence patterns made simple.",
+    duration: "12:30",
+    level: "Grammar",
+    aspect: "video"
+  },
+  {
+    id: "tRo0ej6S69c",
+    youtubeId: "tRo0ej6S69c",
+    url: "https://www.youtube.com/embed/tRo0ej6S69c",
+    type: "youtube",
+    title: "Goethe Exam Preparation",
+    description: "Step-by-step tips and strategies to crack the Goethe-Zertifikat language exams.",
+    duration: "14:45",
+    level: "Exam Prep",
+    aspect: "video"
+  },
+  {
+    id: "hXi47e8xILI",
+    youtubeId: "hXi47e8xILI",
+    url: "https://www.youtube.com/embed/hXi47e8xILI",
+    type: "youtube",
+    title: "Learn German Fluently",
+    description: "Conversational German tips to speak confidently and sound like a native speaker.",
+    duration: "11:20",
+    level: "Speaking Practice",
+    aspect: "video"
+  },
+  {
+    id: "tMQNiplNMJ4",
+    youtubeId: "tMQNiplNMJ4",
+    url: "https://www.youtube.com/embed/tMQNiplNMJ4",
+    type: "youtube",
+    title: "German Conversation Practice",
+    description: "Interactive dialogue practice for everyday situations in Germany.",
+    duration: "09:40",
+    level: "Conversation",
+    aspect: "video"
+  },
+  {
+    id: "sKwGVTTnxUg",
+    youtubeId: "sKwGVTTnxUg",
+    url: "https://www.youtube.com/embed/sKwGVTTnxUg",
+    type: "youtube",
+    title: "Advanced German Grammar",
+    description: "Detailed explanation of B1-B2 level grammar concepts and structures.",
+    duration: "15:10",
+    level: "Advanced Grammar",
+    aspect: "video"
+  },
+  {
+    id: "NXfxiGXdlKQ",
+    youtubeId: "NXfxiGXdlKQ",
+    url: "https://www.youtube.com/embed/NXfxiGXdlKQ",
+    type: "youtube",
+    title: "Pronunciation Masterclass",
+    description: "Tips and tricks to speak German with perfect pronunciation and accent.",
+    duration: "08:50",
+    level: "Pronunciation",
+    aspect: "video"
+  },
+  {
+    id: "xWH7DF3wCww",
+    youtubeId: "xWH7DF3wCww",
+    url: "https://www.youtube.com/embed/xWH7DF3wCww",
+    type: "youtube",
+    title: "Study & Career in Germany",
+    description: "Essential guide on how to prepare for study and work opportunities in Germany.",
+    duration: "13:15",
+    level: "Career Guide",
+    aspect: "video"
   }
 ];
 
@@ -661,31 +767,49 @@ export default function Gallery() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -15 }}
                 transition={{ duration: 0.3 }}
-                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 max-w-4xl mx-auto"
+                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 max-w-4xl mx-auto"
               >
                 {videos.map((video) => (
                   <div
                     key={video.id}
-                    onClick={() => setActiveVideoId(video.id)}
+                    onClick={() => {
+                      setActiveVideoId(video.id);
+                    }}
                     className="group flex flex-col cursor-pointer overflow-hidden rounded-xl border border-border bg-card hover:border-primary/50 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
                   >
                     {/* Video Thumbnail Wrapper */}
-                    <div className="relative aspect-video bg-muted overflow-hidden">
-                      <video
-                        src={video.url}
-                        className="w-full h-full object-cover"
-                        preload="metadata"
-                        playsInline
-                        muted
-                      />
+                    <div className="relative bg-muted overflow-hidden aspect-video">
+                      {video.type === "local" ? (
+                        <video
+                          src={video.url}
+                          className="w-full h-full object-cover"
+                          preload="metadata"
+                          playsInline
+                          muted
+                        />
+                      ) : (
+                        <img
+                          src={`https://img.youtube.com/vi/${video.youtubeId}/0.jpg`}
+                          alt={video.title}
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                          loading="lazy"
+                        />
+                      )}
+                      
                       {/* Play Button Overlay */}
                       <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors duration-300 flex items-center justify-center">
                         <div className="w-14 h-14 rounded-full bg-primary text-primary-foreground flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform duration-300">
                           <Play className="w-6 h-6 fill-current translate-x-[2px]" />
                         </div>
                       </div>
+
+                      {/* Video Type Tag */}
+                      <div className="absolute top-3 left-3 bg-black/75 text-white text-[10px] uppercase font-bold px-2 py-0.5 rounded tracking-wider z-10">
+                        {video.type === "youtube" ? "YouTube" : "Video"}
+                      </div>
+
                       {/* Duration Tag */}
-                      <div className="absolute bottom-2 right-2 bg-black/75 text-white text-xs px-2 py-0.5 rounded font-mono">
+                      <div className="absolute bottom-2 right-2 bg-black/75 text-white text-xs px-2 py-0.5 rounded font-mono z-10">
                         {video.duration}
                       </div>
                     </div>
@@ -786,23 +910,43 @@ export default function Gallery() {
             className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4 md:p-8"
             onClick={() => setActiveVideoId(null)}
           >
-            <div className="relative w-full max-w-4xl aspect-video bg-black rounded-xl overflow-hidden shadow-2xl border border-white/10 z-10" onClick={(e) => e.stopPropagation()}>
-              {/* Close Button */}
-              <button
-                onClick={() => setActiveVideoId(null)}
-                className="absolute top-4 right-4 text-white/75 hover:text-white bg-black/60 hover:bg-black/80 p-2 rounded-full transition-colors z-20"
-                aria-label="Close video"
-              >
-                <X className="w-5 h-5" />
-              </button>
+            {(() => {
+              const activeVideo = videos.find(v => v.id === activeVideoId);
+              if (!activeVideo) return null;
 
-              <video
-                src={videos.find(v => v.id === activeVideoId)?.url}
-                controls
-                autoPlay
-                className="w-full h-full border-0"
-              />
-            </div>
+              return (
+                <div 
+                  className="relative w-full max-w-4xl aspect-video bg-black rounded-xl overflow-hidden shadow-2xl border border-white/10 z-10" 
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  {/* Close Button */}
+                  <button
+                    onClick={() => setActiveVideoId(null)}
+                    className="absolute top-4 right-4 text-white/75 hover:text-white bg-black/60 hover:bg-black/80 p-2 rounded-full transition-colors z-20"
+                    aria-label="Close video"
+                  >
+                    <X className="w-5 h-5" />
+                  </button>
+
+                  {activeVideo.type === "local" ? (
+                    <video
+                      src={activeVideo.url}
+                      controls
+                      autoPlay
+                      className="w-full h-full object-contain"
+                    />
+                  ) : (
+                    <iframe
+                      src={`${activeVideo.url}?autoplay=1&rel=0`}
+                      title={activeVideo.title}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                      className="w-full h-full border-0"
+                    ></iframe>
+                  )}
+                </div>
+              );
+            })()}
             {/* Background Click to Close */}
             <div className="absolute inset-0" onClick={() => setActiveVideoId(null)} />
           </motion.div>
