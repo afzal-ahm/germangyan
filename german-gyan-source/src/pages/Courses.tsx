@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { ChevronRight } from "lucide-react";
 import PageMeta from "@/components/PageMeta";
 import FAQSection from "@/components/FAQSection";
+import otherHero from "@assets/other hero.png";
 
 const fadeUp = { hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } };
 
@@ -31,21 +32,37 @@ const specialCourses = [
 
 export default function Courses() {
   return (
-    <div className="min-h-screen bg-background font-sans pt-20">
+    <div className="min-h-screen bg-background font-sans pt-16">
       <PageMeta
         title="All German Courses | German Gyan"
         description="Explore all German courses at German Gyan — A1, A2, B1, B2, C1, C2 levels plus specialised programmes like brushup course, corporate training, one-to-one sessions and exam prep."
         keywords="German language courses India, A1 to C2 German, Goethe exam preparation, German brushup course, corporate German training, German speaking practice"
       />
-      {/* Hero */}
-      <section className="py-20 px-4 bg-muted/30">
-        <div className="container mx-auto max-w-4xl text-center">
-          <motion.h1 initial="hidden" animate="visible" variants={fadeUp} className="text-4xl md:text-6xl font-serif font-bold mb-6">
-            All <span className="text-primary">German Courses</span>
-          </motion.h1>
-          <motion.p initial="hidden" animate="visible" variants={fadeUp} className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Explore all German courses at German Gyan — A1, A2, B1, B2, C1, C2 levels plus specialised programmes for speaking, exams, corporate, school, and teacher training.
-          </motion.p>
+      {/* Hero Section */}
+      <section className="relative h-[400px] flex items-center overflow-hidden bg-black">
+        <div className="absolute inset-0 z-0">
+          <img
+            src={otherHero}
+            alt="German Gyan Classroom"
+            className="w-full h-full object-cover opacity-60 object-center"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent" />
+        </div>
+
+        <div className="container mx-auto px-6 relative z-10 text-white max-w-6xl">
+          <motion.div initial="hidden" animate="visible" variants={fadeUp} className="max-w-2xl space-y-4">
+            <div className="flex items-center gap-2 text-sm font-medium text-primary">
+              <Link href="/" className="cursor-pointer hover:underline">Home</Link>
+              <span className="text-white/40">/</span>
+              <span className="text-white/60">Courses</span>
+            </div>
+            <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight">
+              All <span className="text-primary font-bold">German Courses</span>
+            </h1>
+            <p className="text-lg md:text-xl text-white/80 font-light leading-relaxed">
+              Explore all German courses at German Gyan — A1, A2, B1, B2, C1, C2 levels plus specialised programmes for speaking, exams, corporate, school, and teacher training.
+            </p>
+          </motion.div>
         </div>
       </section>
 

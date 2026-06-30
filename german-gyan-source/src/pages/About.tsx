@@ -5,26 +5,44 @@ import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle2, Target, Heart, Globe } from "lucide-react";
 import PageMeta from "@/components/PageMeta";
 import FAQSection from "@/components/FAQSection";
+import otherHero from "@assets/other hero.png";
+import banner2 from "@assets/banner 2.png";
 
 const fadeUp = { hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } };
 
 export default function About() {
   return (
-    <div className="min-h-screen bg-background font-sans pt-20">
+    <div className="min-h-screen bg-background font-sans pt-16">
       <PageMeta
         title="About German Gyan | Our Story & Mission"
         description="Learn about German Gyan — founded by Nidhi Jain, an expert German language educator tailoring methods specifically for Indian learners. Our mission, story, and teaching philosophy."
         keywords="about German Gyan, Nidhi Jain German teacher, German language academy India, German institute story, German Gyan mission"
       />
-      {/* Hero */}
-      <section className="py-20 px-4 bg-muted/30">
-        <div className="container mx-auto max-w-4xl text-center">
-          <motion.h1 initial="hidden" animate="visible" variants={fadeUp} className="text-4xl md:text-6xl font-serif font-bold mb-6">
-            About <span className="text-primary">German Gyan</span>
-          </motion.h1>
-          <motion.p initial="hidden" animate="visible" variants={fadeUp} className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Empowering Indian learners to break language barriers and unlock global opportunities in German-speaking countries.
-          </motion.p>
+      {/* Hero Section */}
+      <section className="relative h-[400px] flex items-center overflow-hidden bg-black">
+        <div className="absolute inset-0 z-0">
+          <img
+            src={otherHero}
+            alt="German Gyan Classroom"
+            className="w-full h-full object-cover opacity-60 object-center"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent" />
+        </div>
+
+        <div className="container mx-auto px-6 relative z-10 text-white max-w-6xl">
+          <motion.div initial="hidden" animate="visible" variants={fadeUp} className="max-w-2xl space-y-4">
+            <div className="flex items-center gap-2 text-sm font-medium text-primary">
+              <Link href="/" className="cursor-pointer hover:underline">Home</Link>
+              <span className="text-white/40">/</span>
+              <span className="text-white/60">About Us</span>
+            </div>
+            <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight">
+              About <span className="text-primary font-bold">German Gyan</span>
+            </h1>
+            <p className="text-lg md:text-xl text-white/80 font-light leading-relaxed">
+              Empowering Indian learners to break language barriers and unlock global opportunities in German-speaking countries.
+            </p>
+          </motion.div>
         </div>
       </section>
 
@@ -46,7 +64,7 @@ export default function About() {
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
             <div className="relative rounded-2xl overflow-hidden aspect-square shadow-2xl">
               <img
-                src="\assets\nidhi-jain.webp"
+                src={banner2}
                 alt="Nidhi Jain — Founder & Lead Instructor, German Gyan"
                 className="w-full h-full object-cover"
               />

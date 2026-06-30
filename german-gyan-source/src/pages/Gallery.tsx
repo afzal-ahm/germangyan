@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight, Play, Maximize2 } from "lucide-react";
 import PageMeta from "@/components/PageMeta";
-import galleryHero from "@assets/gallery-hero.png";
+import otherHero from "@assets/other hero.png";
 
 // Import Priority Group (Achievements, Awards, Events)
 import certificate1 from "@assets/certificate-1.jpeg";
@@ -760,7 +760,7 @@ export default function Gallery() {
       <section className="relative h-[400px] flex items-center overflow-hidden bg-black">
         <div className="absolute inset-0 z-0">
           <img
-            src={galleryHero}
+            src={otherHero}
             alt="German Gyan Classroom"
             className="w-full h-full object-cover opacity-60 object-center"
           />
