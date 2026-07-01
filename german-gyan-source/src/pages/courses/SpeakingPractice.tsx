@@ -10,7 +10,7 @@ export default function SpeakingPractice() {
         keywords="German speaking practice, German conversation classes India, spoken German fluency, German pronunciation, Goethe speaking exam prep"
       />
       <CoursePage
-      image="\assets\nidhi-jain.webp"
+      image="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=800&h=600&fit=crop&q=80"
       level="Speaking Focus"
       title="German Speaking Practice Sessions"
       price=""

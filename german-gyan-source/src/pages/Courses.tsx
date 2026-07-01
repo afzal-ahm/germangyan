@@ -17,6 +17,7 @@ const levelCourses = [
   { level: "B2", title: "B2 Level German Course", price: "₹28,000", href: "/courses/b2-level-german-course", desc: "Professional fluency. Master complex communication for work and university in Germany.", tag: "Upper-Intermediate" },
   { level: "C1", title: "C1 Level German Course", price: "₹35,000", href: "/courses/c1-level-german-course", desc: "Advanced German for professionals, academics, and those targeting top German universities.", tag: "Advanced" },
   { level: "C2", title: "C2 Level German Course", price: "₹45,000", href: "/courses/c2-level-german-course", desc: "Achieve near-native mastery — the highest CEFR certification level.", tag: "Mastery" },
+  { level: "Ausbildung", title: "German for Ausbildung in Germany", price: "A1–B2 Prep", href: "/courses/german-for-ausbildung-in-germany", desc: "Specialized language training and travel support for vocational education in Germany.", tag: "Ausbildung" },
 ];
 
 const specialCourses = [
@@ -25,9 +26,12 @@ const specialCourses = [
   { title: "Brush-Up Classes", href: "/courses/german-brush-up-classes", desc: "Revive and refresh your existing German skills with targeted focused sessions.", tag: "Refresher" },
   { title: "1-on-1 German Sessions", href: "/courses/one-to-one-german-sessions", desc: "Fully personalised learning at your own pace, schedule, and focus areas.", tag: "Personalised" },
   { title: "Corporate Training", href: "/courses/corporate-training", desc: "Custom German programmes for teams and organisations. Business German delivery.", tag: "Business" },
-  { title: "School German Programs", href: "/courses/school-german-programs", desc: "Board-aligned German coaching for Class 6–12 students. CBSE/ICSE/State Board.", tag: "School" },
+  { title: "School German Programs", href: "/courses/school-german-programs", desc: "Board-aligned German coaching for Class 5 Onwards students. CBSE/ICSE/State Board.", tag: "School" },
+  { title: "German CV & Cover Letter Writing", href: "/courses/german-cv-cover-letter-writing-service", desc: "Professional Lebenslauf & Anschreiben preparation tailored to modern German hiring standards.", tag: "CV Writing" },
+  { title: "German Job Interview Preparation", href: "/courses/german-job-interview-preparation-program", desc: "Mock interviews, self-introduction, and negotiation training for India & Germany.", tag: "Interview Prep" },
+  { title: "Ausbildung Interview Prep", href: "/courses/ausbildung-interview-preparation-program", desc: "Mock interviews, Selbstvorstellung, and technical vocab preparation for vocational programs in Germany.", tag: "Interview Prep" },
   { title: "Speaking Practice Sessions", href: "/courses/german-speaking-practice-sessions", desc: "Dedicated conversation practice to build genuine oral fluency. A2 level and above.", tag: "Speaking" },
-  { title: "Exam Preparation", href: "/courses/german-exam-preparation-sessions", desc: "Targeted Goethe exam coaching with mock tests and component-specific coaching.", tag: "Exam" },
+  { title: "Exam Preparation", href: "/courses/german-exam-preparation-sessions", desc: "Coaching for Goethe-Zertifikat, TELC, TestDaF & ÖSD examinations with mock tests.", tag: "Exam" },
 ];
 
 export default function Courses() {
@@ -80,7 +84,7 @@ export default function Courses() {
                   <Card className="h-full border-border/50 hover:border-primary/50 hover:shadow-lg transition-all cursor-pointer group">
                     <CardContent className="p-6">
                       <div className="flex items-start justify-between mb-4">
-                        <span className="text-4xl font-bold font-serif text-primary">{course.level}</span>
+                        <span className={`font-bold font-serif text-primary ${course.level.length > 2 ? "text-xl sm:text-2xl" : "text-4xl"}`}>{course.level}</span>
                         <Badge variant="secondary" className="bg-primary/10 text-primary">{course.tag}</Badge>
                       </div>
                       <h3 className="font-bold text-lg mb-2 group-hover:text-primary transition-colors">{course.title}</h3>
@@ -131,6 +135,13 @@ export default function Courses() {
       </section>
 
       <FAQSection page="courses" />
+
+      {/* German Flag Divider */}
+      <div className="w-full h-[5px] flex">
+        <div className="flex-1 bg-black" />
+        <div className="flex-1 bg-[#E30613]" />
+        <div className="flex-1 bg-[#FFED00]" />
+      </div>
 
       {/* CTA */}
       <section className="py-20 bg-secondary text-secondary-foreground text-center px-4">

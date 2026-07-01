@@ -10,7 +10,7 @@ export default function BrushUpClasses() {
         keywords="German brush up classes, refresh German skills, revive German, German refresher course India, German gap filling"
       />
       <CoursePage
-      image="\assets\nidhi-jain.webp"
+      image="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=600&fit=crop&q=80"
       level="Refresher"
       title="German Brush-Up Classes"
       price=""

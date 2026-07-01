@@ -1,4 +1,5 @@
-import { Switch, Route, Router as WouterRouter } from "wouter";
+import { useEffect } from "react";
+import { Switch, Route, Router as WouterRouter, useLocation } from "wouter";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -6,6 +7,16 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import Preloader from "@/components/Preloader";
+
+function ScrollToTop() {
+  const [location] = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+
+  return null;
+}
 import Home from "@/pages/Home";
 import About from "@/pages/About";
 import Courses from "@/pages/Courses";
@@ -13,6 +24,7 @@ import Instructor from "@/pages/Instructor";
 import Gallery from "@/pages/Gallery";
 import Contact from "@/pages/Contact";
 import NotFound from "@/pages/NotFound";
+import Internship from "@/pages/Internship";
 import A1Course from "@/pages/courses/A1Course";
 import A2Course from "@/pages/courses/A2Course";
 import B1Course from "@/pages/courses/B1Course";
@@ -27,6 +39,10 @@ import CorporateTraining from "@/pages/courses/CorporateTraining";
 import SchoolPrograms from "@/pages/courses/SchoolPrograms";
 import SpeakingPractice from "@/pages/courses/SpeakingPractice";
 import ExamPreparation from "@/pages/courses/ExamPreparation";
+import AusbildungCourse from "@/pages/courses/AusbildungCourse";
+import CVWritingService from "@/pages/courses/CVWritingService";
+import InterviewPrep from "@/pages/courses/InterviewPrep";
+import AusbildungPrep from "@/pages/courses/AusbildungPrep";
 
 const queryClient = new QueryClient();
 
@@ -50,9 +66,14 @@ function Router() {
       <Route path="/courses/school-german-programs" component={SchoolPrograms} />
       <Route path="/courses/german-speaking-practice-sessions" component={SpeakingPractice} />
       <Route path="/courses/german-exam-preparation-sessions" component={ExamPreparation} />
+      <Route path="/courses/german-for-ausbildung-in-germany" component={AusbildungCourse} />
+      <Route path="/courses/german-cv-cover-letter-writing-service" component={CVWritingService} />
+      <Route path="/courses/german-job-interview-preparation-program" component={InterviewPrep} />
+      <Route path="/courses/ausbildung-interview-preparation-program" component={AusbildungPrep} />
       <Route path="/instructor" component={Instructor} />
       <Route path="/gallery" component={Gallery} />
       <Route path="/contact" component={Contact} />
+      <Route path="/internship" component={Internship} />
       <Route component={NotFound} />
     </Switch>
   );
@@ -63,6 +84,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
+          <ScrollToTop />
           <div className="flex flex-col min-h-[100dvh]">
             <Navbar />
             <main className="flex-1">

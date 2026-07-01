@@ -13,6 +13,45 @@ import banner2 from "@assets/banner 2.png";
 import banner3 from "@assets/banner 3.png";
 import banner4 from "@assets/baner 4.png";
 
+// Import Client/Partner Logos
+import gujindiaLogo from "@assets/client logo/GujindiaLogo.png";
+import skPng from "@assets/client logo/SK-PNG.avif";
+import screenshot1 from "@assets/client logo/Screenshot 2026-07-01 at 13.22.56.png";
+import screenshot2 from "@assets/client logo/Screenshot 2026-07-01 at 13.24.07.png";
+import screenshot3 from "@assets/client logo/Screenshot 2026-07-01 at 13.25.01.png";
+import screenshot4 from "@assets/client logo/Screenshot 2026-07-01 at 13.27.55.png";
+import screenshot5 from "@assets/client logo/Screenshot 2026-07-01 at 13.28.41.png";
+import screenshot6 from "@assets/client logo/Screenshot 2026-07-01 at 13.29.31.png";
+import screenshot7 from "@assets/client logo/Screenshot 2026-07-01 at 13.34.51.png";
+import whatsappImg from "@assets/client logo/WhatsApp Image 2026-07-01 at 12.34.05.jpeg";
+import eurizone from "@assets/client logo/eurizone.png";
+import fhmInternational from "@assets/client logo/fhm-international.svg";
+import logo1 from "@assets/client logo/logo-1.png";
+import logo from "@assets/client logo/logo.png";
+import logo03 from "@assets/client logo/logo_03.png";
+import magicBillion from "@assets/client logo/magic_billion.png";
+import ethosLogo from "@assets/client logo/ETHOS-FINAL-LOGO2.webp";
+
+const clientLogos = [
+  gujindiaLogo,
+  skPng,
+  screenshot1,
+  screenshot2,
+  screenshot3,
+  screenshot4,
+  screenshot5,
+  screenshot6,
+  screenshot7,
+  whatsappImg,
+  eurizone,
+  fhmInternational,
+  logo1,
+  logo,
+  logo03,
+  magicBillion,
+  ethosLogo
+];
+
 const fadeUp = { hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } };
 const stagger = { hidden: {}, visible: { transition: { staggerChildren: 0.1 } } };
 
@@ -46,20 +85,24 @@ const courses = [
   { level: "B2", title: "Upper-Intermediate", price: "₹28,000", href: "/courses/b2-level-german-course", desc: "Communicate fluently and understand complex texts with ease." },
   { level: "C1", title: "Advanced German", price: "₹35,000", href: "/courses/c1-level-german-course", desc: "Professional fluency for university, career, and high-level communication." },
   { level: "C2", title: "Mastery German", price: "₹45,000", href: "/courses/c2-level-german-course", desc: "Achieve near-native mastery — the highest CEFR level." },
+  { level: "Ausbildung", title: "German for Ausbildung", price: "A1–B2 Prep", href: "/courses/german-for-ausbildung-in-germany", desc: "Specialized language training and travel support for vocational education in Germany." },
 ];
 
 const specialCourses = [
   { title: "Brushup Course", desc: "Refresh previously learned concepts, improve fluency, and regain confidence.", href: "/courses/german-brushup-course" },
   { title: "Corporate Training", desc: "Custom German programmes for teams and organisations.", href: "/courses/corporate-training" },
   { title: "1-on-1 Sessions", desc: "Personalised learning at your own pace.", href: "/courses/one-to-one-german-sessions" },
-  { title: "Exam Preparation", desc: "Targeted Goethe exam coaching for all levels.", href: "/courses/german-exam-preparation-sessions" },
+  { title: "Exam Preparation", desc: "Coaching for Goethe-Zertifikat, TELC, TestDaF & ÖSD examinations.", href: "/courses/german-exam-preparation-sessions" },
   { title: "Speaking Practice", desc: "Build fluency through dedicated conversation sessions.", href: "/courses/german-speaking-practice-sessions" },
-  { title: "School Programs", desc: "Board-aligned German coaching for Class 6–12.", href: "/courses/school-german-programs" },
+  { title: "School Programs", desc: "Board-aligned German coaching for Class 5 Onwards.", href: "/courses/school-german-programs" },
+  { title: "German CV Writing", desc: "Professional Lebenslauf & Anschreiben preparation.", href: "/courses/german-cv-cover-letter-writing-service" },
+  { title: "German Interview Prep", desc: "Mock interviews & negotiation coaching for India & Germany.", href: "/courses/german-job-interview-preparation-program" },
+  { title: "Ausbildung Interview Prep", desc: "Mock interviews & technical German prep for Ausbildung in Germany.", href: "/courses/ausbildung-interview-preparation-program" },
 ];
 
 const stats = [
-  { value: "500+", label: "Students Taught" },
-  { value: "95%", label: "Exam Pass Rate" },
+  { value: "10k+", label: "Students Taught" },
+  { value: "95%", label: "Exam Pass Rate", sublabel: "Excellent Results in Goethe, TELC, TestDaF & ÖSD Examinations" },
   { value: "A1–C2", label: "All CEFR Levels" },
   { value: "10+", label: "Years Experience" },
 ];
@@ -97,7 +140,7 @@ const whyChooseUs = [
   },
   {
     emoji: "👥",
-    title: "Small Batch Size (8–10 Students)",
+    title: "Small Batch Size (4–8 Students)",
     desc: "Better interaction, personalized attention, and faster progress."
   },
   {
@@ -346,13 +389,13 @@ export default function Home() {
       <section className="pt-28 pb-20 px-4 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 -z-10" />
         <div className="w-full mx-auto max-w-[1440px] px-6 md:px-12">
-          <div className="grid md:grid-cols-12 gap-12 items-center">
+          <div className="grid md:grid-cols-12 gap-8 lg:gap-12 items-center">
             {/* Left Column - Text and Actions */}
             <motion.div
               initial="hidden"
               animate="visible"
               variants={stagger}
-              className="md:col-span-4 text-left space-y-8"
+              className="md:col-span-5 xl:col-span-4 text-left space-y-5 lg:space-y-6 xl:space-y-8"
             >
               <motion.div variants={fadeUp}>
                 <span
@@ -365,20 +408,20 @@ export default function Home() {
 
               <motion.h1
                 variants={fadeUp}
-                className="text-5xl md:text-[5rem] font-bold tracking-tight text-foreground leading-[1.1]"
+                className="text-4xl lg:text-[4rem] xl:text-[5rem] font-bold tracking-tight text-foreground leading-[1.1]"
               >
                 Learn<br />
                 <span className="block my-2 font-black">
                   G<span className="text-[#E30613]">e</span><span className="text-[#FFED00]">r</span>man
                 </span>
-                <span className="font-serif italic font-normal text-muted-foreground text-4xl md:text-5xl block mt-4">
+                <span className="font-serif italic font-normal text-muted-foreground text-3xl lg:text-4xl xl:text-5xl block mt-3 lg:mt-4">
                   Online & Offline
                 </span>
               </motion.h1>
 
               <motion.p
                 variants={fadeUp}
-                className="text-lg text-muted-foreground leading-relaxed max-w-xl"
+                className="text-sm lg:text-base xl:text-lg text-muted-foreground leading-relaxed max-w-xl"
               >
                 From absolute beginner to advanced — personalised German classes online all over the world and offline classes in New Delhi. New batches start every week. Free demo available.
               </motion.p>
@@ -386,7 +429,7 @@ export default function Home() {
               <motion.div variants={fadeUp} className="flex flex-wrap gap-4">
                 <Button
                   size="lg"
-                  className="rounded-full px-8 text-md font-bold h-14 bg-[#FFC700] hover:bg-[#E6B200] text-black transition-colors border-none"
+                  className="rounded-full px-8 text-sm lg:text-md font-bold h-11 lg:h-12 xl:h-14 bg-[#FFC700] hover:bg-[#E6B200] text-black transition-colors border-none"
                   asChild
                 >
                   <Link href="/contact">Book Free Demo</Link>
@@ -394,7 +437,7 @@ export default function Home() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="rounded-full px-8 text-md font-bold h-14 border-border hover:bg-muted transition-colors"
+                  className="rounded-full px-8 text-sm lg:text-md font-bold h-11 lg:h-12 xl:h-14 border-border hover:bg-muted transition-colors"
                   asChild
                 >
                   <Link href="/courses">View Courses →</Link>
@@ -404,19 +447,19 @@ export default function Home() {
               {/* Hero Stats */}
               <motion.div
                 variants={fadeUp}
-                className="pt-8 border-t border-border/40 grid grid-cols-3 gap-6 max-w-md"
+                className="pt-5 lg:pt-6 xl:pt-8 border-t border-border/40 grid grid-cols-3 gap-4 xl:gap-6 max-w-md"
               >
                 <div>
-                  <div className="text-3xl font-bold text-primary">A1–C1</div>
-                  <div className="text-[10px] uppercase tracking-wider text-muted-foreground font-bold mt-1">All Levels</div>
+                  <div className="text-2xl lg:text-3xl font-bold text-primary">A1 to C2</div>
+                  <div className="text-[9px] lg:text-[10px] uppercase tracking-wider text-muted-foreground font-bold mt-1">German Language Courses</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-bold text-primary">1000+</div>
-                  <div className="text-[10px] uppercase tracking-wider text-muted-foreground font-bold mt-1">Students</div>
+                  <div className="text-2xl lg:text-3xl font-bold text-primary">10,000+</div>
+                  <div className="text-[9px] lg:text-[10px] uppercase tracking-wider text-muted-foreground font-bold mt-1">Happy Learners</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-bold text-primary">100%</div>
-                  <div className="text-[10px] uppercase tracking-wider text-muted-foreground font-bold mt-1">Dedicated</div>
+                  <div className="text-2xl lg:text-3xl font-bold text-primary">100%</div>
+                  <div className="text-[9px] lg:text-[10px] uppercase tracking-wider text-muted-foreground font-bold mt-1">Dedicated</div>
                 </div>
               </motion.div>
             </motion.div>
@@ -426,7 +469,7 @@ export default function Home() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="md:col-span-8 flex justify-center items-center w-full"
+              className="md:col-span-7 xl:col-span-8 flex justify-center items-center w-full"
             >
               <div className="relative w-full aspect-[3/2] max-w-full rounded-3xl overflow-hidden shadow-2xl border border-border/45 bg-muted/20 flex flex-col justify-end group">
                 {/* Carousel Slides */}
@@ -442,19 +485,19 @@ export default function Home() {
                     <img
                       src={carouselImages[currentSlide].url}
                       alt={carouselImages[currentSlide].title}
-                      className="w-full h-full object-contain bg-black/40"
+                      className="w-full h-full object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                   </motion.div>
                 </AnimatePresence>
 
                 {/* Caption Overlay */}
-                <div className="relative z-10 p-8 text-white text-left space-y-2 pointer-events-none">
+                <div className="relative z-10 p-4 md:p-8 text-white text-left space-y-1 md:space-y-2 pointer-events-none">
                   <motion.h3
                     key={`title-${currentSlide}`}
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="text-xl md:text-2xl font-bold text-[#FFC700]"
+                    className="text-sm sm:text-lg md:text-2xl font-bold text-[#FFC700]"
                   >
                     {carouselImages[currentSlide].title}
                   </motion.h3>
@@ -463,7 +506,7 @@ export default function Home() {
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.1 }}
-                    className="text-sm text-white/80 leading-relaxed"
+                    className="text-[10px] sm:text-sm text-white/80 leading-relaxed"
                   >
                     {carouselImages[currentSlide].desc}
                   </motion.p>
@@ -487,6 +530,56 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Infinite Marquee / We Work With Section */}
+      <section className="py-10 bg-[#f9fafb] border-y border-border/40 overflow-hidden relative">
+        <style dangerouslySetInnerHTML={{ __html: `
+          @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+          }
+          .animate-marquee-infinite {
+            display: flex;
+            width: max-content;
+            animation: marquee 35s linear infinite;
+          }
+          .animate-marquee-infinite:hover {
+            animation-play-state: paused;
+          }
+        `}} />
+        
+        <div className="container mx-auto px-4 mb-6">
+          <h3 className="text-center text-xs font-bold uppercase tracking-widest text-muted-foreground/80">
+            We Work With
+          </h3>
+        </div>
+
+        <div className="relative w-full overflow-hidden flex select-none">
+          <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
+          
+          <div className="animate-marquee-infinite gap-6 flex">
+            {clientLogos.map((logo, idx) => (
+              <div key={`logo-1-${idx}`} className="bg-white p-3.5 px-6 rounded-xl border border-border/40 flex items-center justify-center min-w-[140px] md:min-w-[170px] h-16 md:h-20 shadow-sm shrink-0">
+                <img
+                  src={logo}
+                  alt={`Partner Logo ${idx + 1}`}
+                  className="max-w-full max-h-full object-contain filter grayscale opacity-75 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                />
+              </div>
+            ))}
+            {clientLogos.map((logo, idx) => (
+              <div key={`logo-2-${idx}`} className="bg-white p-3.5 px-6 rounded-xl border border-border/40 flex items-center justify-center min-w-[140px] md:min-w-[170px] h-16 md:h-20 shadow-sm shrink-0">
+                <img
+                  src={logo}
+                  alt={`Partner Logo Duplicate ${idx + 1}`}
+                  className="max-w-full max-h-full object-contain filter grayscale opacity-75 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Stats */}
       <section className="py-12 bg-muted/30 px-4">
         <div className="container mx-auto max-w-4xl">
@@ -502,6 +595,11 @@ export default function Home() {
               >
                 <div className="text-4xl font-bold font-serif text-primary mb-1">{s.value}</div>
                 <div className="text-sm text-muted-foreground font-medium">{s.label}</div>
+                {s.sublabel && (
+                  <div className="text-[10px] sm:text-xs text-muted-foreground mt-1.5 max-w-[180px] mx-auto leading-normal">
+                    {s.sublabel}
+                  </div>
+                )}
               </motion.div>
             ))}
           </div>
@@ -536,7 +634,7 @@ export default function Home() {
                   <Card className="h-full border-border/50 hover:border-primary/50 hover:shadow-lg transition-all duration-300 cursor-pointer group">
                     <CardContent className="p-6">
                       <div className="flex items-center justify-between mb-4">
-                        <span className="text-3xl font-bold font-serif text-primary">{course.level}</span>
+                        <span className={`font-bold font-serif text-primary ${course.level.length > 2 ? "text-xl sm:text-2xl" : "text-3xl"}`}>{course.level}</span>
                         <span className="font-bold text-foreground">{course.price}</span>
                       </div>
                       <h3 className="font-bold text-xl mb-2 group-hover:text-primary transition-colors">{course.title}</h3>

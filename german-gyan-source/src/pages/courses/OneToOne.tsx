@@ -10,7 +10,7 @@ export default function OneToOne() {
         keywords="one to one German sessions, private German tutor India, personalised German learning, German private classes, individual German lessons"
       />
       <CoursePage
-      image="\assets\nidhi-jain.webp"
+      image="https://images.unsplash.com/photo-1577896851231-70ef18881754?w=800&h=600&fit=crop&q=80"
       level="Personalised"
       title="One-to-One German Sessions"
       price=""

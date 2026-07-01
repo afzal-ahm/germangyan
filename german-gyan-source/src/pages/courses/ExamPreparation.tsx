@@ -10,7 +10,7 @@ export default function ExamPreparation() {
         keywords="German exam preparation, Goethe Zertifikat prep, TELC German exam, ÖSD German, TestDaF preparation, German 4 modules training"
       />
       <CoursePage
-        image="/assets/nidhi-jain.webp"
+        image="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&h=600&fit=crop&q=80"
         level="Exam Focused"
         title="German Exam Preparation Sessions"
         price="Covers all 4 modules (Reading, Writing, Speaking, Listening)"

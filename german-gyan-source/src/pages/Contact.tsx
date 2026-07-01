@@ -57,7 +57,7 @@ export default function Contact() {
     <div className="min-h-screen bg-background font-sans pt-16">
       <PageMeta
         title="Contact Germangyan | Book a Free Demo Class"
-        description="Get in touch with German Gyan — call or WhatsApp +91-96434-30783, email contact@germangyan.com, or fill in our inquiry form to book a free demo class."
+        description="Get in touch with German Gyan — call or WhatsApp +91-96434-30783, email germangyan04@gmail.com or nidhi.jain@germangyan.com, or fill in our inquiry form to book a free demo class."
         keywords="contact German Gyan, German course enquiry, German class fees, book German demo class, German Gyan WhatsApp, German language admission"
       />
       {/* Hero Section */}
@@ -96,7 +96,8 @@ export default function Contact() {
             <h2 className="text-2xl font-serif font-bold">Get in Touch</h2>
             {[
               { icon: Phone, label: "Phone / WhatsApp", value: "+91-96434-30783", href: "tel:+919643430783" },
-              { icon: Mail, label: "Email", value: "contact@germangyan.com", href: "mailto:contact@germangyan.com" },
+              { icon: Mail, label: "Email", value: "germangyan04@gmail.com", href: "mailto:germangyan04@gmail.com" },
+              { icon: Mail, label: "Email (Founder)", value: "nidhi.jain@germangyan.com", href: "mailto:nidhi.jain@germangyan.com" },
               { icon: MapPin, label: "Delhi Branch", value: "2, COMMERCIAL COMPLEX, 301, 3rd Floor, Savitri Sadan, Preet Vihar, Delhi, 110092", href: "https://maps.app.goo.gl/67qRoNxHkeGn1yET7" },
               { icon: MapPin, label: "Noida Branch", value: "Royal Nest, Greater Noida W Rd, Tech Zone IV, Amrapali Dream Valley, Greater Noida, Ithaira, Uttar Pradesh 201318", href: "https://maps.app.goo.gl/rLbyhGrwsVuvRCYr6" },
             ].map(({ icon: Icon, label, value, href }, i) => (
@@ -125,8 +126,7 @@ export default function Contact() {
 
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="p-4 bg-muted/50 rounded-xl">
               <h4 className="font-bold mb-2">Office Hours</h4>
-              <p className="text-sm text-muted-foreground">Monday – Saturday: 9:00 AM – 8:00 PM IST</p>
-              <p className="text-sm text-muted-foreground">Sunday: 10:00 AM – 5:00 PM IST</p>
+              <p className="text-sm text-muted-foreground">Monday – Friday: 10:00 AM – 6:00 PM IST</p>
             </motion.div>
           </div>
 
@@ -247,6 +247,13 @@ export default function Contact() {
       </section>
 
       <FAQSection page="contact" />
+
+      {/* German Flag Divider */}
+      <div className="w-full h-[5px] flex">
+        <div className="flex-1 bg-black" />
+        <div className="flex-1 bg-[#E30613]" />
+        <div className="flex-1 bg-[#FFED00]" />
+      </div>
     </div>
   );
 }

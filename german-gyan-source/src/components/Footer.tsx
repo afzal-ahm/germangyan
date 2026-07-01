@@ -35,7 +35,7 @@ export default function Footer() {
                 { href: "/", label: "Home" },
                 { href: "/about", label: "About Us" },
                 { href: "/courses", label: "Courses" },
-                { href: "/instructor", label: "Instructor" },
+                { href: "/instructor", label: "German Coach" },
                 { href: "/contact", label: "Contact" },
               ].map((link) => (
                 <li key={link.href}>
@@ -54,9 +54,12 @@ export default function Footer() {
                 <Phone className="w-4 h-4 text-white" />
                 <span>+91-96434-30783</span>
               </li>
-              <li className="flex items-center gap-2">
-                <Mail className="w-4 h-4 text-white" />
-                <span>contact@germangyan.com</span>
+              <li className="flex items-start gap-2">
+                <Mail className="w-4 h-4 text-white mt-1 shrink-0" />
+                <div className="flex flex-col gap-1">
+                  <a href="mailto:germangyan04@gmail.com" className="hover:text-primary transition-colors">germangyan04@gmail.com</a>
+                  <a href="mailto:nidhi.jain@germangyan.com" className="hover:text-primary transition-colors">nidhi.jain@germangyan.com</a>
+                </div>
               </li>
               <li className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 text-white mt-1 shrink-0" />

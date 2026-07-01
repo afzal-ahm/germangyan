@@ -17,3 +17,8 @@ Thumbs.db
 .vite/
 german-gyan-source/dist/
 german-gyan-source/.vite/
+
+# Zip archives and backups
+*.zip
+german-gyan-source-backup.zip
+german-gyan-source.zip

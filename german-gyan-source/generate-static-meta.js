@@ -89,8 +89,32 @@ const pages = [
   {
     route: "/courses/school-german-programs",
     title: "School German Programs | CBSE ICSE German Coaching | German Gyan",
-    description: "Board-aligned German coaching for Class 6–12 students (CBSE/ICSE/State). Improve grades, build real fluency, and prepare for Class 10 and 12 board exams.",
+    description: "Board-aligned German coaching for Class 5 Onwards students (CBSE/ICSE/State). Improve grades, build real fluency, and prepare for Class 10 and 12 board exams.",
     keywords: "school German programs India, CBSE German coaching, ICSE German classes, Class 10 German, Class 12 German board exam",
+  },
+  {
+    route: "/courses/german-for-ausbildung-in-germany",
+    title: "German Language Course for Ausbildung in Germany | German Gyan",
+    description: "Prepare for your Ausbildung in Germany with specialized German language training at German Gyan. Profession-specific vocabulary, visa documentation, and travel support with Sky Journey.",
+    keywords: "German for Ausbildung, Ausbildung Germany, nursing Ausbildung German, technical German course, travel support Sky Journey, vocational training Germany",
+  },
+  {
+    route: "/courses/german-cv-cover-letter-writing-service",
+    title: "German CV & Cover Letter Writing Service | German Gyan",
+    description: "Get a professional German CV (Lebenslauf) and Cover Letter (Anschreiben) written according to German hiring and ATS standards. Premium paid service.",
+    keywords: "German CV writing, Lebenslauf writing service, German cover letter, Anschreiben service, ATS resume Germany, job application Germany",
+  },
+  {
+    route: "/courses/german-job-interview-preparation-program",
+    title: "German Job Interview Preparation Program | German Gyan",
+    description: "Crack German job interviews in India & Germany with confidence. Professional mock interviews, Selbstvorstellung practice, and salary negotiation training.",
+    keywords: "German job interview, mock interview German, Selbstvorstellung practice, interview questions Germany, workplace communication German",
+  },
+  {
+    route: "/courses/ausbildung-interview-preparation-program",
+    title: "Ausbildung Interview Preparation Program | German Gyan",
+    description: "Prepare with confidence for your Ausbildung interview in Germany. Mock interviews, Selbstvorstellung practice, and profession-specific vocabulary.",
+    keywords: "Ausbildung interview preparation, vocational training Germany, Nursing Ausbildung interview, mechatronics Ausbildung, Selbstvorstellung practice",
   },
   {
     route: "/courses/german-speaking-practice-sessions",
@@ -107,8 +131,8 @@ const pages = [
   {
     route: "/courses/german-teacher-training-program",
     title: "German Teacher Training Program | German Gyan",
-    description: "Become a certified German language teacher with German Gyan's teacher training programme. Learn pedagogy, lesson planning, and effective teaching techniques for German.",
-    keywords: "German teacher training, DaF certification India, German language teaching course, become German teacher, German pedagogy course",
+    description: "Become a certified German language trainer with German Gyan's 10-day intensive Teacher Training Program. Learn lesson planning, exam preparation strategies, and get an internship.",
+    keywords: "German teacher training, become German teacher, German language trainer course, Goethe exam preparation trainer, German pedagogy",
   },
   {
     route: "/instructor",
@@ -119,8 +143,14 @@ const pages = [
   {
     route: "/contact",
     title: "Contact German Gyan | Book a Free Demo Class Online & Offline",
-    description: "Get in touch with German Gyan — call or WhatsApp +91-96434-30783, email hello@germangyan.in, or fill in our inquiry form to book a free demo class.",
+    description: "Get in touch with German Gyan — call or WhatsApp +91-96434-30783, email germangyan04@gmail.com or nidhi.jain@germangyan.com, or fill in our inquiry form to book a free demo class.",
     keywords: "contact German Gyan, German course enquiry, German class fees, book German demo class, German Gyan WhatsApp, German language admission",
+  },
+  {
+    route: "/internship",
+    title: "German Language Internship Program | German Gyan",
+    description: "Gain practical teaching experience with German Gyan's 3-month German Language Internship. Observe live classes, teach under mentorship, and earn an experience letter.",
+    keywords: "German language internship, German teaching internship, learn teaching German, Delhi German internship, language experience letter",
   },
   {
     route: "/gallery",

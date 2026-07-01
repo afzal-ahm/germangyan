@@ -14,7 +14,8 @@ const SpotifyIcon = ({ className }: { className?: string }) => (
 const navLinks = [
   { href: "/about", label: "About" },
   { href: "/courses", label: "Courses" },
-  { href: "/instructor", label: "Instructor" },
+  { href: "/instructor", label: "German Coach" },
+  { href: "/internship", label: "Internship" },
   { href: "/gallery", label: "Gallery" },
   { href: "/contact", label: "Contact" },
 ];
@@ -37,12 +38,12 @@ export default function Navbar() {
           <img src={logo} alt="German Gyan" className="h-10 w-auto object-contain" />
         </Link>
 
-        <div className="hidden md:flex items-center gap-8 font-medium text-sm">
+        <div className="hidden lg:flex items-center gap-4 lg:gap-5 xl:gap-8 font-medium text-sm shrink-0">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className={`transition-colors hover:text-primary ${
+              className={`transition-colors hover:text-primary whitespace-nowrap ${
                 location === link.href ? "text-primary font-semibold" : "text-foreground"
               }`}
             >
@@ -51,17 +52,16 @@ export default function Navbar() {
           ))}
         </div>
 
-        <div className="hidden md:flex items-center gap-3">
+        <div className="hidden lg:flex items-center gap-2 xl:gap-3 shrink-0">
           {/* YouTube Podcast */}
           <a
             href="http://youtube.com/c/GermanGyan"
             target="_blank"
             rel="noreferrer"
-            className="border border-red-500/30 hover:border-red-500 bg-red-500/5 hover:bg-red-500/10 text-red-600 dark:text-red-400 px-3 py-1.5 rounded-full text-xs font-semibold flex items-center gap-1.5 transition-all duration-300 shadow-sm group hover:scale-105"
+            className="w-9 h-9 rounded-full border border-red-500/20 hover:border-red-500/50 bg-red-500/5 hover:bg-red-500/10 flex items-center justify-center transition-all duration-300 shadow-sm group hover:scale-105"
             title="Watch German Gyan YouTube Podcast"
           >
             <Youtube className="w-4 h-4 text-red-500 group-hover:animate-pulse" />
-            <span>YT Podcast</span>
           </a>
 
           {/* Spotify Podcast */}
@@ -69,22 +69,21 @@ export default function Navbar() {
             href="https://open.spotify.com/show/2fxS8DOBaRhWyepyOYHl6b?si=Q7K7syabQemRvhQzVzgCQg"
             target="_blank"
             rel="noreferrer"
-            className="border border-green-500/30 hover:border-green-500 bg-green-500/5 hover:bg-green-500/10 text-green-600 dark:text-green-400 px-3 py-1.5 rounded-full text-xs font-semibold flex items-center gap-1.5 transition-all duration-300 shadow-sm group hover:scale-105"
+            className="w-9 h-9 rounded-full border border-green-500/20 hover:border-green-500/50 bg-green-500/5 hover:bg-green-500/10 flex items-center justify-center transition-all duration-300 shadow-sm group hover:scale-105"
             title="Listen to German Gyan Spotify Podcast"
           >
             <SpotifyIcon className="w-4 h-4 text-green-500 group-hover:animate-pulse" />
-            <span>Spotify Podcast</span>
           </a>
 
           <div className="h-4 w-px bg-border mx-1" />
 
-          <Button asChild className="rounded-full">
+          <Button asChild className="rounded-full h-9 px-4 text-xs lg:text-sm lg:h-10 lg:px-5">
             <Link href="/contact">Book Free Demo</Link>
           </Button>
         </div>
 
         <button
-          className="md:hidden p-2 text-foreground"
+          className="lg:hidden p-2 text-foreground"
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
         >
@@ -93,7 +92,7 @@ export default function Navbar() {
       </div>
 
       {open && (
-        <div className="md:hidden absolute top-16 left-0 w-full bg-background border-b border-border p-4 shadow-lg flex flex-col gap-4">
+        <div className="lg:hidden absolute top-16 left-0 w-full bg-background border-b border-border p-4 shadow-lg flex flex-col gap-4">
           {navLinks.map((link) => (
             <Link
               key={link.href}

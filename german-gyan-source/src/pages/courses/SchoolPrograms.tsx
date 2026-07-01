@@ -6,15 +6,15 @@ export default function SchoolPrograms() {
     <>
       <PageMeta
         title="School German Programs | CBSE ICSE German Coaching | German Gyan"
-        description="Board-aligned German coaching for Class 6–12 students (CBSE/ICSE/State). Improve grades, build real fluency, and prepare for Class 10 and 12 board exams."
+        description="Board-aligned German coaching for Class 5 Onwards students (CBSE/ICSE/State). Improve grades, build real fluency, and prepare for Class 10 and 12 board exams."
         keywords="school German programs India, CBSE German coaching, ICSE German classes, Class 10 German, Class 12 German board exam"
       />
       <CoursePage
-      image="\assets\nidhi-jain.webp"
+      image="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=800&h=600&fit=crop&q=80"
       level="School"
       title="School German Programs"
       price=""
-      tagline="Board-aligned German coaching for Class 6–12 students. CBSE, ICSE, and State Board coverage with proper grammar and real speaking practice."
+      tagline="Board-aligned German coaching for Class 5 Onwards students. CBSE, ICSE, and State Board coverage with proper grammar and real speaking practice."
       duration="Academic Year / Semester"
       about={[
         "German is offered as a second language in CBSE, ICSE, and many state board schools across India. But most school students don't get the dedicated guidance they need to truly understand the language — and many graduate Class 12 with German on their marksheet but minimal ability to use it.",
@@ -41,7 +41,7 @@ export default function SchoolPrograms() {
         "Certificate of participation",
       ]}
       perfectFor={[
-        "Class 6–12 students with German as a second language.",
+        "Class 5 Onwards students with German as a second language.",
         "Students who find school German classes insufficient or poorly taught.",
         "Class 10 and Class 12 board exam candidates wanting to score 90+.",
         "Students interested in pursuing German at a higher level after Class 12.",

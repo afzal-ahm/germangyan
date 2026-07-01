@@ -56,6 +56,32 @@ import speaking2 from "@assets/speaking-2.jpeg";
 import speaking3 from "@assets/speaking-3.jpeg";
 import erPhoto from "@assets/er.jpg";
 
+// Import New Classroom Photos & Videos
+import class1 from "@assets/class - 1.jpeg";
+import class2 from "@assets/class - 2.jpeg";
+import class3 from "@assets/class - 3.jpeg";
+import class4 from "@assets/class - 4.jpeg";
+import class5 from "@assets/class - 5.jpeg";
+import class6 from "@assets/class - 6.jpeg";
+import class7 from "@assets/class - 7.jpeg";
+import class8 from "@assets/class - 8.jpeg";
+import class9 from "@assets/class - 9.jpeg";
+import class11 from "@assets/class - 11.jpeg";
+import class12 from "@assets/class - 12.jpeg";
+import class13 from "@assets/class - 13.jpeg";
+import class14 from "@assets/class - 14.jpeg";
+import class10Video from "@assets/class - 10.mp4";
+
+// Import Ambassador & Diplomat Assets
+import ackermannPhoto from "@assets/with Philipp Ackermann.jpeg";
+import sainsburyPhoto from "@assets/with Toby Sainsbury.jpeg";
+import ackermannVideo from "@assets/Philipp Ackermann talking.mp4";
+
+// Import New Celebrity & Founder Photos
+import kanganaPhoto from "@assets/meet with Kangana Ranaut.jpeg";
+import nidhiLogoPhoto from "@assets/nidhi with german gyan logo.jpeg";
+import nidhiFlagPhoto from "@assets/nidhi with indian flag.jpeg";
+
 // Import Local Videos
 import studentVideo from "@assets/student.mp4";
 import teachingVideo from "@assets/teaching-german-to-student.mp4";
@@ -66,7 +92,7 @@ interface PhotoItem {
   thumbnail: string;
   title: string;
   description: string;
-  category: "Achievements" | "Awards" | "Events" | "Centres" | "Classes";
+  category: "Achievements" | "Awards" | "Events" | "Classroom & Office";
 }
 
 interface VideoItem {
@@ -85,6 +111,30 @@ interface VideoItem {
 // Master Photos List
 const masterPhotos: PhotoItem[] = [
   // --- PRIORITY GROUP (Achievements, Awards, Events) ---
+  {
+    id: 203,
+    url: kanganaPhoto,
+    thumbnail: kanganaPhoto,
+    title: "With Actress Kangana Ranaut",
+    description: "Nidhi Jain meeting with Bollywood actress Kangana Ranaut.",
+    category: "Achievements"
+  },
+  {
+    id: 201,
+    url: ackermannPhoto,
+    thumbnail: ackermannPhoto,
+    title: "Meeting German Ambassador Dr. Philipp Ackermann",
+    description: "The German Ambassador Dr. Philipp Ackermann met him for one case as German Translator and gifted him my own translated book in German.",
+    category: "Achievements"
+  },
+  {
+    id: 202,
+    url: sainsburyPhoto,
+    thumbnail: sainsburyPhoto,
+    title: "Meeting British Representative Toby Sainsbury",
+    description: "Discussing education pathways, trade policy, and language translations with Toby Sainsbury.",
+    category: "Achievements"
+  },
   {
     id: 99,
     url: erPhoto,
@@ -230,14 +280,14 @@ const masterPhotos: PhotoItem[] = [
     category: "Events"
   },
 
-  // --- REGULAR GROUP (Centres, Classes, Speaking) ---
+  // --- REGULAR GROUP (Classroom & Office) ---
   {
     id: 18,
     url: nidhi,
     thumbnail: nidhi,
     title: "Nidhi Jain",
     description: "Founder & Lead Instructor at German Gyan.",
-    category: "Classes"
+    category: "Classroom & Office"
   },
   {
     id: 19,
@@ -245,7 +295,7 @@ const masterPhotos: PhotoItem[] = [
     thumbnail: nidhi1,
     title: "Interactive Classroom Teaching",
     description: "Nidhi Jain conducting a live session with students.",
-    category: "Classes"
+    category: "Classroom & Office"
   },
   {
     id: 20,
@@ -253,7 +303,7 @@ const masterPhotos: PhotoItem[] = [
     thumbnail: nidhi1Copy,
     title: "Concept-Based Teaching",
     description: "Simplifying German grammar rules for Indian students.",
-    category: "Classes"
+    category: "Classroom & Office"
   },
   {
     id: 21,
@@ -261,7 +311,7 @@ const masterPhotos: PhotoItem[] = [
     thumbnail: nidhi2,
     title: "Grammar Deep-Dive",
     description: "Explaining sentence structures and cases on the board.",
-    category: "Classes"
+    category: "Classroom & Office"
   },
   {
     id: 22,
@@ -269,7 +319,7 @@ const masterPhotos: PhotoItem[] = [
     thumbnail: nidhi3,
     title: "Personalized Counseling",
     description: "Guiding students on study and career prospects in Germany.",
-    category: "Classes"
+    category: "Classroom & Office"
   },
   {
     id: 23,
@@ -277,7 +327,7 @@ const masterPhotos: PhotoItem[] = [
     thumbnail: nidhi3Copy,
     title: "Career Guidance Session",
     description: "Explaining the Goethe exam modules and scoring system.",
-    category: "Classes"
+    category: "Classroom & Office"
   },
   {
     id: 24,
@@ -285,7 +335,7 @@ const masterPhotos: PhotoItem[] = [
     thumbnail: nidhi4,
     title: "Goethe Exam Preparation",
     description: "Conducting mock speaking practice sessions.",
-    category: "Classes"
+    category: "Classroom & Office"
   },
   {
     id: 25,
@@ -293,7 +343,7 @@ const masterPhotos: PhotoItem[] = [
     thumbnail: nidhi4Copy,
     title: "Exam Tips & Strategies",
     description: "Discussing reading and writing section strategies.",
-    category: "Classes"
+    category: "Classroom & Office"
   },
   {
     id: 26,
@@ -301,7 +351,7 @@ const masterPhotos: PhotoItem[] = [
     thumbnail: nidhi5,
     title: "Doubt Clearing Session",
     description: "Addressing individual student queries during the class.",
-    category: "Classes"
+    category: "Classroom & Office"
   },
   {
     id: 27,
@@ -309,7 +359,7 @@ const masterPhotos: PhotoItem[] = [
     thumbnail: nidhi5Copy,
     title: "One-on-One Interaction",
     description: "Providing personalized feedback on pronunciation.",
-    category: "Classes"
+    category: "Classroom & Office"
   },
   {
     id: 28,
@@ -317,7 +367,7 @@ const masterPhotos: PhotoItem[] = [
     thumbnail: nidhi6,
     title: "Active Speaking Session",
     description: "Interactive German conversation practice in class.",
-    category: "Classes"
+    category: "Classroom & Office"
   },
   {
     id: 29,
@@ -325,7 +375,7 @@ const masterPhotos: PhotoItem[] = [
     thumbnail: nidhi7,
     title: "Vocabulary Building",
     description: "Teaching daily-use German vocabulary and phrases.",
-    category: "Classes"
+    category: "Classroom & Office"
   },
   {
     id: 30,
@@ -333,7 +383,7 @@ const masterPhotos: PhotoItem[] = [
     thumbnail: office1,
     title: "Delhi Centre Classroom",
     description: "A look inside our main classroom and learning area.",
-    category: "Centres"
+    category: "Classroom & Office"
   },
   {
     id: 31,
@@ -341,7 +391,7 @@ const masterPhotos: PhotoItem[] = [
     thumbnail: office2,
     title: "Spacious Learning Environment",
     description: "Classrooms designed for comfortable and focused language learning.",
-    category: "Centres"
+    category: "Classroom & Office"
   },
   {
     id: 32,
@@ -349,7 +399,7 @@ const masterPhotos: PhotoItem[] = [
     thumbnail: office3,
     title: "Delhi Classroom Setup",
     description: "Equipped with interactive smartboard and multimedia systems.",
-    category: "Centres"
+    category: "Classroom & Office"
   },
   {
     id: 33,
@@ -357,7 +407,7 @@ const masterPhotos: PhotoItem[] = [
     thumbnail: office4,
     title: "Bright & Modern Classroom",
     description: "Air-conditioned classrooms with comfortable seating.",
-    category: "Centres"
+    category: "Classroom & Office"
   },
   {
     id: 34,
@@ -365,7 +415,7 @@ const masterPhotos: PhotoItem[] = [
     thumbnail: office5,
     title: "Noida Extension Centre",
     description: "Classroom view of our Greater Noida West study centre.",
-    category: "Centres"
+    category: "Classroom & Office"
   },
   {
     id: 35,
@@ -373,7 +423,7 @@ const masterPhotos: PhotoItem[] = [
     thumbnail: office6,
     title: "Classroom Study Session",
     description: "Providing a great study atmosphere for offline batches.",
-    category: "Centres"
+    category: "Classroom & Office"
   },
   {
     id: 36,
@@ -381,7 +431,7 @@ const masterPhotos: PhotoItem[] = [
     thumbnail: office7,
     title: "Multimedia Board",
     description: "Utilizing modern tools to make learning interactive and fun.",
-    category: "Centres"
+    category: "Classroom & Office"
   },
   {
     id: 37,
@@ -389,7 +439,7 @@ const masterPhotos: PhotoItem[] = [
     thumbnail: office8,
     title: "Delhi Centre Infrastructure",
     description: "Clean, comfortable, and professional learning spaces.",
-    category: "Centres"
+    category: "Classroom & Office"
   },
   {
     id: 38,
@@ -397,7 +447,7 @@ const masterPhotos: PhotoItem[] = [
     thumbnail: office9,
     title: "Classroom Study Desk",
     description: "Organized seating designed for collaborative group work.",
-    category: "Centres"
+    category: "Classroom & Office"
   },
   {
     id: 39,
@@ -405,7 +455,7 @@ const masterPhotos: PhotoItem[] = [
     thumbnail: office10,
     title: "Interactive Classroom",
     description: "Setting up group activities and interactive board games.",
-    category: "Centres"
+    category: "Classroom & Office"
   },
   {
     id: 40,
@@ -413,7 +463,7 @@ const masterPhotos: PhotoItem[] = [
     thumbnail: office11,
     title: "Batch Seating View",
     description: "Comfortable layout ensuring every student gets Nidhi's attention.",
-    category: "Centres"
+    category: "Classroom & Office"
   },
   {
     id: 41,
@@ -421,7 +471,7 @@ const masterPhotos: PhotoItem[] = [
     thumbnail: office12,
     title: "Noida Extension Classrooms",
     description: "Modern desks and chairs at our Greater Noida West location.",
-    category: "Centres"
+    category: "Classroom & Office"
   },
   {
     id: 42,
@@ -429,7 +479,7 @@ const masterPhotos: PhotoItem[] = [
     thumbnail: office13,
     title: "Study & Discussion Corner",
     description: "Corner space designed for self-study and peer discussions.",
-    category: "Centres"
+    category: "Classroom & Office"
   },
   {
     id: 43,
@@ -437,7 +487,7 @@ const masterPhotos: PhotoItem[] = [
     thumbnail: office14,
     title: "Listening Corner Setup",
     description: "Equipped with audio systems for official Goethe listening practice.",
-    category: "Centres"
+    category: "Classroom & Office"
   },
   {
     id: 44,
@@ -445,7 +495,7 @@ const masterPhotos: PhotoItem[] = [
     thumbnail: office15,
     title: "Delhi Preet Vihar Reception",
     description: "The welcoming lobby and reception area at our Delhi centre.",
-    category: "Centres"
+    category: "Classroom & Office"
   },
   {
     id: 45,
@@ -453,7 +503,7 @@ const masterPhotos: PhotoItem[] = [
     thumbnail: speaking1,
     title: "German Speaking Practice",
     description: "Active conversational German practice with fellow learners.",
-    category: "Classes"
+    category: "Classroom & Office"
   },
   {
     id: 46,
@@ -461,7 +511,7 @@ const masterPhotos: PhotoItem[] = [
     thumbnail: speaking2,
     title: "Oral Fluency Sessions",
     description: "Practicing everyday dialogues and situational speaking.",
-    category: "Classes"
+    category: "Classroom & Office"
   },
   {
     id: 47,
@@ -469,13 +519,153 @@ const masterPhotos: PhotoItem[] = [
     thumbnail: speaking3,
     title: "German Pronunciation Drills",
     description: "Focusing on correct intonation, umlauts, and sentence rhythm.",
-    category: "Classes"
+    category: "Classroom & Office"
+  },
+  {
+    id: 151,
+    url: class1,
+    thumbnail: class1,
+    title: "Offline Batch Class",
+    description: "Students participating in collaborative learning in our Preet Vihar classroom.",
+    category: "Classroom & Office"
+  },
+  {
+    id: 152,
+    url: class2,
+    thumbnail: class2,
+    title: "Classroom Interactive Session",
+    description: "Students learning and practicing German dialogues under Nidhi's guidance.",
+    category: "Classroom & Office"
+  },
+  {
+    id: 153,
+    url: class3,
+    thumbnail: class3,
+    title: "German Learning Activity",
+    description: "Highly engaged batch practicing writing and interactive grammar exercises.",
+    category: "Classroom & Office"
+  },
+  {
+    id: 154,
+    url: class4,
+    thumbnail: class4,
+    title: "Offline Batch Learning",
+    description: "Our Preet Vihar class engaged in understanding advanced sentence structures.",
+    category: "Classroom & Office"
+  },
+  {
+    id: 155,
+    url: class5,
+    thumbnail: class5,
+    title: "Collaborative Study Session",
+    description: "Students discussing exercises during an offline class.",
+    category: "Classroom & Office"
+  },
+  {
+    id: 156,
+    url: class6,
+    thumbnail: class6,
+    title: "Classroom Group Activity",
+    description: "Batch participating in team speaking exercises in our Delhi branch.",
+    category: "Classroom & Office"
+  },
+  {
+    id: 157,
+    url: class7,
+    thumbnail: class7,
+    title: "Live Offline Class",
+    description: "Live offline German class focused on core language skills.",
+    category: "Classroom & Office"
+  },
+  {
+    id: 158,
+    url: class8,
+    thumbnail: class8,
+    title: "Delhi Branch Batch",
+    description: "A class session going on in our modern Preet Vihar learning space.",
+    category: "Classroom & Office"
+  },
+  {
+    id: 159,
+    url: class9,
+    thumbnail: class9,
+    title: "Active Learning Session",
+    description: "Students working on writing modules with individualized attention.",
+    category: "Classroom & Office"
+  },
+  {
+    id: 161,
+    url: class11,
+    thumbnail: class11,
+    title: "Classroom Interaction",
+    description: "Interactive batch session focusing on German speaking and pronunciation.",
+    category: "Classroom & Office"
+  },
+  {
+    id: 162,
+    url: class12,
+    thumbnail: class12,
+    title: "Offline Batch Practice",
+    description: "A class focusing on exam formats and modules.",
+    category: "Classroom & Office"
+  },
+  {
+    id: 163,
+    url: class13,
+    thumbnail: class13,
+    title: "Study Group at German Gyan",
+    description: "Collaborative study session at our Preet Vihar centre.",
+    category: "Classroom & Office"
+  },
+  {
+    id: 164,
+    url: class14,
+    thumbnail: class14,
+    title: "Interactive Classroom Study",
+    description: "Offline class session with interactive boards and modern learning tools.",
+    category: "Classroom & Office"
+  },
+  {
+    id: 204,
+    url: nidhiLogoPhoto,
+    thumbnail: nidhiLogoPhoto,
+    title: "Nidhi Jain at German Gyan",
+    description: "Founder Nidhi Jain in front of the German Gyan official logo.",
+    category: "Classroom & Office"
+  },
+  {
+    id: 205,
+    url: nidhiFlagPhoto,
+    thumbnail: nidhiFlagPhoto,
+    title: "Nidhi Jain with Indian Flag",
+    description: "Posing proudly with the national flag at our Delhi branch center.",
+    category: "Classroom & Office"
   }
 ];
 
 // Mixed Videos List (Local + YouTube)
 const videos: VideoItem[] = [
   // --- Local Videos ---
+  {
+    id: "ackermann-video",
+    url: ackermannVideo,
+    type: "local",
+    title: "German Ambassador Dr. Philipp Ackermann meeting",
+    description: "The German Ambassador Dr. Philipp Ackermann met him for one case as German Translator and gifted him my own translated book in German.",
+    duration: "0:15",
+    level: "Ambassador Event",
+    aspect: "video"
+  },
+  {
+    id: "class-10-video",
+    url: class10Video,
+    type: "local",
+    title: "Classroom Learning & Practice Session",
+    description: "Students actively practicing speaking and learning German in our interactive class.",
+    duration: "0:25",
+    level: "Classroom Session",
+    aspect: "video"
+  },
   {
     id: "teaching-video",
     url: teachingVideo,
@@ -630,7 +820,7 @@ const videos: VideoItem[] = [
     duration: "Playlist",
     level: "YouTube Playlist",
     aspect: "video",
-    thumbnail: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=600&q=80"
+    thumbnail: "https://img.youtube.com/vi/7ep5UlGWgjI/hqdefault.jpg"
   },
   {
     id: "playlist-2",
@@ -642,7 +832,7 @@ const videos: VideoItem[] = [
     duration: "Playlist",
     level: "YouTube Playlist",
     aspect: "video",
-    thumbnail: "https://images.unsplash.com/photo-1543167118-0bd791a4cd11?auto=format&fit=crop&w=600&q=80"
+    thumbnail: "https://img.youtube.com/vi/9_uMiG87LNY/hqdefault.jpg"
   },
   {
     id: "playlist-3",
@@ -654,7 +844,7 @@ const videos: VideoItem[] = [
     duration: "Playlist",
     level: "YouTube Playlist",
     aspect: "video",
-    thumbnail: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=600&q=80"
+    thumbnail: "https://img.youtube.com/vi/uyBkq__3Zes/hqdefault.jpg"
   },
   {
     id: "playlist-4",
@@ -666,7 +856,7 @@ const videos: VideoItem[] = [
     duration: "Playlist",
     level: "YouTube Playlist",
     aspect: "video",
-    thumbnail: "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=600&q=80"
+    thumbnail: "https://img.youtube.com/vi/T_DbhFYxa80/hqdefault.jpg"
   },
   {
     id: "playlist-5",
@@ -678,7 +868,7 @@ const videos: VideoItem[] = [
     duration: "Playlist",
     level: "YouTube Playlist",
     aspect: "video",
-    thumbnail: "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=600&q=80"
+    thumbnail: "https://img.youtube.com/vi/abAS6FIwkn4/hqdefault.jpg"
   }
 ];
 
@@ -702,6 +892,7 @@ export default function Gallery() {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const [activeVideoId, setActiveVideoId] = useState<string | null>(null);
   const [displayPhotos, setDisplayPhotos] = useState<PhotoItem[]>(masterPhotos);
+  const [selectedCategory, setSelectedCategory] = useState("All");
 
   // Prioritize and Shuffle Photos on Load
   useEffect(() => {
@@ -709,9 +900,9 @@ export default function Gallery() {
     const priorityPhotos = masterPhotos.filter(p =>
       p.category === "Achievements" || p.category === "Awards" || p.category === "Events"
     );
-    // Group B (Regular): Centres, Classes
+    // Group B (Regular): Classroom & Office
     const regularPhotos = masterPhotos.filter(p =>
-      p.category !== "Achievements" && p.category !== "Awards" && p.category !== "Events"
+      p.category === "Classroom & Office"
     );
 
     // Shuffle both groups
@@ -722,16 +913,20 @@ export default function Gallery() {
     setDisplayPhotos([...shuffledPriority, ...shuffledRegular]);
   }, []);
 
+  const filteredPhotos = selectedCategory === "All"
+    ? displayPhotos
+    : displayPhotos.filter(p => p.category === selectedCategory);
+
   // Lightbox navigation
   const handlePrevPhoto = () => {
     if (lightboxIndex !== null) {
-      setLightboxIndex((prev) => (prev === 0 ? displayPhotos.length - 1 : prev! - 1));
+      setLightboxIndex((prev) => (prev === 0 ? filteredPhotos.length - 1 : prev! - 1));
     }
   };
 
   const handleNextPhoto = () => {
     if (lightboxIndex !== null) {
-      setLightboxIndex((prev) => (prev === displayPhotos.length - 1 ? 0 : prev! + 1));
+      setLightboxIndex((prev) => (prev === filteredPhotos.length - 1 ? 0 : prev! + 1));
     }
   };
 
@@ -746,7 +941,7 @@ export default function Gallery() {
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [lightboxIndex, displayPhotos]);
+  }, [lightboxIndex, filteredPhotos]);
 
   return (
     <div className="min-h-screen bg-background font-sans pt-16">
@@ -788,8 +983,13 @@ export default function Gallery() {
       <section className="py-12 md:py-16">
         <div className="container mx-auto px-6 max-w-6xl">
           {/* Tabs Navigation */}
-          <div className="border-b border-border mb-10">
-            <div className="flex gap-8">
+          <div className="border-b border-border mb-10 overflow-x-auto no-scrollbar" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+            <style dangerouslySetInnerHTML={{ __html: `
+              .no-scrollbar::-webkit-scrollbar {
+                display: none;
+              }
+            `}} />
+            <div className="flex gap-6 md:gap-8 pb-1 whitespace-nowrap min-w-max">
               <button
                 onClick={() => setActiveTab("photos")}
                 className={`flex items-center gap-2 pb-4 text-base md:text-lg font-medium transition-all relative ${
@@ -865,39 +1065,57 @@ export default function Gallery() {
           <AnimatePresence mode="wait">
             {activeTab === "photos" && (
               <motion.div
-                key="photos-grid"
+                key="photos-grid-wrapper"
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -15 }}
                 transition={{ duration: 0.3 }}
-                className="columns-1 sm:columns-2 md:columns-3 gap-6"
               >
-                {displayPhotos.map((photo, index) => (
-                  <div
-                    key={photo.id}
-                    onClick={() => setLightboxIndex(index)}
-                    className="break-inside-avoid mb-6 group relative cursor-pointer overflow-hidden rounded-xl bg-muted border border-border/50 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
-                  >
-                    <img
-                      src={photo.thumbnail}
-                      alt={photo.title}
-                      className="w-full h-auto block transition-transform duration-500 group-hover:scale-105"
-                      loading="lazy"
-                    />
-                    {/* Hover Overlay */}
-                    <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-4 z-10 text-white">
-                      <div className="self-end bg-primary/90 text-primary-foreground text-xs font-semibold px-2 py-1 rounded-full">
-                        {photo.category}
-                      </div>
-                      <div>
-                        <h3 className="font-semibold text-lg flex items-center gap-2">
-                          {photo.title} <Maximize2 className="w-4 h-4 text-primary" />
-                        </h3>
-                        <p className="text-xs text-white/80 line-clamp-2 mt-1">{photo.description}</p>
+                {/* Category Sub-Filters */}
+                <div className="flex flex-wrap gap-2 md:gap-3 mb-8 justify-center sm:justify-start">
+                  {["All", "Achievements", "Awards", "Events", "Classroom & Office"].map((cat) => (
+                    <button
+                      key={cat}
+                      onClick={() => setSelectedCategory(cat)}
+                      className={`px-4 py-1.5 rounded-full text-xs font-bold transition-all border ${
+                        selectedCategory === cat
+                          ? "bg-primary text-primary-foreground border-primary shadow-sm"
+                          : "bg-muted/40 hover:bg-muted text-muted-foreground border-border/50"
+                      }`}
+                    >
+                      {cat}
+                    </button>
+                  ))}
+                </div>
+
+                <div className="columns-1 sm:columns-2 md:columns-3 gap-6">
+                  {filteredPhotos.map((photo, index) => (
+                    <div
+                      key={photo.id}
+                      onClick={() => setLightboxIndex(index)}
+                      className="break-inside-avoid mb-6 group relative cursor-pointer overflow-hidden rounded-xl bg-muted border border-border/50 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                    >
+                      <img
+                        src={photo.thumbnail}
+                        alt={photo.title}
+                        className="w-full h-auto block transition-transform duration-500 group-hover:scale-105"
+                        loading="lazy"
+                      />
+                      {/* Hover Overlay */}
+                      <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-4 z-10 text-white">
+                        <div className="self-end bg-primary/90 text-primary-foreground text-xs font-semibold px-2 py-1 rounded-full">
+                          {photo.category}
+                        </div>
+                        <div>
+                          <h3 className="font-semibold text-lg flex items-center gap-2">
+                            {photo.title} <Maximize2 className="w-4 h-4 text-primary" />
+                          </h3>
+                          <p className="text-xs text-white/80 line-clamp-2 mt-1">{photo.description}</p>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </motion.div>
             )}
 
@@ -1112,6 +1330,13 @@ export default function Gallery() {
         </div>
       </section>
 
+      {/* German Flag Divider */}
+      <div className="w-full h-[5px] flex">
+        <div className="flex-1 bg-black" />
+        <div className="flex-1 bg-[#E30613]" />
+        <div className="flex-1 bg-[#FFED00]" />
+      </div>
+
       {/* Photo Lightbox Modal */}
       <AnimatePresence>
         {lightboxIndex !== null && (
@@ -1157,15 +1382,15 @@ export default function Gallery() {
               onClick={(e) => e.stopPropagation()}
             >
               <img
-                src={displayPhotos[lightboxIndex].url}
-                alt={displayPhotos[lightboxIndex].title}
+                src={filteredPhotos[lightboxIndex].url}
+                alt={filteredPhotos[lightboxIndex].title}
                 className="max-w-full max-h-[75vh] object-contain rounded-lg shadow-2xl"
               />
               <div className="text-center mt-4 text-white max-w-xl px-4">
-                <h4 className="text-xl font-bold text-primary">{displayPhotos[lightboxIndex].title}</h4>
-                <p className="text-sm text-white/80 mt-1">{displayPhotos[lightboxIndex].description}</p>
+                <h4 className="text-xl font-bold text-primary">{filteredPhotos[lightboxIndex].title}</h4>
+                <p className="text-sm text-white/80 mt-1">{filteredPhotos[lightboxIndex].description}</p>
                 <span className="inline-block mt-2 text-xs text-white/50 bg-white/10 px-2 py-0.5 rounded-full">
-                  {lightboxIndex + 1} / {displayPhotos.length}
+                  {lightboxIndex + 1} / {filteredPhotos.length}
                 </span>
               </div>
             </motion.div>

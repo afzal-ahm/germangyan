@@ -10,7 +10,7 @@ export default function CorporateTraining() {
         keywords="corporate German training, German for business, German language for companies India, workplace German course, German B2B training"
       />
       <CoursePage
-      image="\assets\nidhi-jain.webp"
+      image="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop&q=80"
       level="Business"
       title="Corporate German Language Training"
       price=""

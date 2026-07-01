@@ -10,7 +10,7 @@ export default function C2Course() {
         keywords="C2 German course, mastery German, German proficiency, Goethe C2, German mastery level, German language expert India"
       />
       <CoursePage
-      image="\assets\nidhi-jain.webp"
+      image="https://images.unsplash.com/photo-1506880018603-83d5b814b5a6?w=800&h=600&fit=crop&q=80"
       level="C2"
       title="C2 Level German Course"
       price="₹45,000"
